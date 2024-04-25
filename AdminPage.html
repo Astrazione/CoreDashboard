@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminPage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="StyleList.css">
+</head>
+
+<body>    
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <div class="dropdown_nav">
+                <button class="navbar-brand" style="font-size: 16px;">Фамилия И.О.</button>
+                <div class="dropdown-content">
+                  <a href="#">Администратор</a>
+                </div>
+            </div>
+
+            <div class="d-flex">
+                <a class="btn btn-outline" href="#">Пользователи</a>
+                <button class="btn brn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Добавить пользователя</button>
+                <button class="btn brn-outline-success">Выход</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-bs-labelledby="exampleModalLabel" aria-bs-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Регистрация</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" arialabel="close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="row mb-3">
+                            <input class="form_input" type="text" name="login" placeholder="Фамилия" required>
+                            <input class="form_input" type="text" name="login" placeholder="Имя" required>
+                            <input class="form_input" type="text" name="login" placeholder="Отчество">
+                            <div class="select1">
+                                <select name="user">
+                                    <option value="Администратор">Администратор</option>
+                                    <option value="Куратор направления">Куратор направления</option>
+                                    <option value="Преподаватель">Преподаватель</option>
+                                    <option value="Студент">Студент</option>
+                                </select>
+                            </div>
+                            
+                            <input class="form_input" type="text" name="login" placeholder="Логин" required>
+                            <input class="form_input" type="password" name="password" placeholder="Пароль" required>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="buttonForm" type="submit" method="get">Зарегистрировать</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="download" >
+        <h3 align="center">Загрузить файл</h3>
+            <label>
+                <form action="#" method="post" enctype="multipart/form-data">
+                    <input type="file" name="dataset" accept=".csv, .xlsx" >
+                </form> 
+                <span>+</span>
+            </label>
+    </div>
+            <button class="buttonForm" type="submit" method="post">Загрузить базу данных</button>
+    
+
+    <div align="center">
+        <h3>Загруженные данные</h3>
+            <div>
+            <table>
+                <thead> 
+                    <tr>
+                    <th>№</th>
+                    <th>Название</th>
+                    <th>Дата загрузки</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td><a href="">Программирование и основы алгоритмизации</a></td>
+                        <td>21.01.2023</td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                    <td colspan="2">Общее количество датасетов:</td>
+                    <td>1</td>
+                    </tr>
+                </tfoot>
+            </table>
+            </div>
+    </div>
+    
+    <div>
+        <h3 align="center">Статистика</h3>
+            <div style="margin-left: 2%;">
+                <a class="btn brn-outline" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" style="background-color: #ff5959; border-radius: 0px;">
+                Настроить фильтры</a>
+            </div>
+            <div  align="center">
+                <iframe src="" ></iframe>
+            </div>
+    </div>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h4 class="offcanvas-title" id="offcanvasExampleLabel">Фильтры</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
+        </div>
+    
+        <div class="offcanvas-body">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Выбрать данные
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Датасет 1</a></li>
+                </ul>
+            </div>
+            <div class="dropdown mt-2">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Выбрать группу
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">ПиОА Л-01</a></li>
+                    <li><a class="dropdown-item" href="#">ПиОА Л-02</a></li>
+                    <li><a class="dropdown-item" href="#">ПиОА Л-03</a></li>
+                    <li><a class="dropdown-item" href="#">ПиОА Л-04</a></li>
+                    <li><a class="dropdown-item" href="#">ПиОА Л-05</a></li>
+                </ul>
+            </div>
+            <div class="dropdown mt-2">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Выбрать направление
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Значение 1</a></li>
+                    <li><a class="dropdown-item" href="#">Значение 2</a></li>
+                    <li><a class="dropdown-item" href="#">Значение 3</a></li>
+                </ul>
+            </div>
+            <div class="mt-2">
+                <button class="btn" type="button" style="border: 1px solid;">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+</body>
+</html>

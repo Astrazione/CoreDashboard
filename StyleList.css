@@ -1,0 +1,158 @@
+.navbar-custom {
+    background-color: #ff5959;
+}
+.form_input {
+    display: block;
+    width: 470px;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 20px;
+    height: 40px;
+    border: none;
+    padding-left: 10px;
+    padding-bottom: 4px;
+    background-color: #f7f7f7;
+}
+    
+select{
+    width: 235px;
+    margin-top: 10px;
+    height: 40px;
+    border-radius: 20px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+}
+    
+.buttonForm {
+    display: block;
+    height: 40px;
+    width: 470px;
+    margin: 0 auto;
+    margin-top: 5px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #ff5959;
+    color:black;
+}
+
+.download{
+    width: 300px;
+    margin: auto;
+}
+
+
+input[type="file"]{
+    display: none;
+}
+    
+span { 
+    position: relative;
+    display: block; 
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 20px;
+    height: 40px;
+    width: 300px;
+    padding-top: 4px;
+    border: 2px solid;
+    font-size: 40px;
+    text-align: center;
+    line-height: 22px;   
+} 
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 16px;
+    overflow:auto;
+} 
+
+iframe {
+    border: 1px solid black;
+    width: 96%; 
+    margin: auto;
+    margin-top: 5px;
+    height: 400px;
+    background-color: #f0f0f0;
+    overflow:auto;
+}
+
+h3 { 
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.dropdown_nav {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    margin-top: 10px;
+    background-color: white;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 1px 12px 12px 1px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
+
+.navbar-brand{
+    border: none;
+    background-color: #ff5959;
+}
+
+.dropdown_nav:hover .dropdown-content {display: block;}
+
+hr{
+    margin: 0;
+    padding: 0;
+}
+.user {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.btn-close{
+    margin: 20px;
+}
+
+.name {
+    width: 70%;
+}
+
+.role{
+    display: flex;
+    background-color: white;
+    border: none;
+    text-align: right;
+    padding-top: 15px;
+    margin-left: auto;
+    cursor: pointer;
+}
+.btn-edit {
+    display: flex;
+    background-color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: auto;
+    cursor: pointer;
+}
