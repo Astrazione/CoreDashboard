@@ -3,36 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\controllers\\educationalrecordscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:controllers\\educationalrecordscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\controllers\\educationalrecordscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:controllers\\educationalrecordscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\educationalrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\educationalrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\educationalrecords\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\educationalrecords\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\educationalrecords\\addfile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\educationalrecords\\addfile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\migrations\\applicationcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:migrations\\applicationcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\migrations\\20240329075807_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:migrations\\20240329075807_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 281,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,98 +42,74 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T14:10:29.351Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AddFile.cshtml",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\EducationalRecords\\AddFile.cshtml",
-              "RelativeDocumentMoniker": "Views\\EducationalRecords\\AddFile.cshtml",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\EducationalRecords\\AddFile.cshtml",
-              "RelativeToolTip": "Views\\EducationalRecords\\AddFile.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-29T08:19:30.726Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\EducationalRecords\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\EducationalRecords\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\EducationalRecords\\Create.cshtml",
-              "RelativeToolTip": "Views\\EducationalRecords\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-29T08:03:20.761Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ApplicationContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Migrations\\ApplicationContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "Migrations\\ApplicationContextModelSnapshot.cs",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Migrations\\ApplicationContextModelSnapshot.cs",
-              "RelativeToolTip": "Migrations\\ApplicationContextModelSnapshot.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T07:59:11.362Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "20240329075807_init.cs",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Migrations\\20240329075807_init.cs",
-              "RelativeDocumentMoniker": "Migrations\\20240329075807_init.cs",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Migrations\\20240329075807_init.cs",
-              "RelativeToolTip": "Migrations\\20240329075807_init.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACwAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T07:58:07.924Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "EducationalRecordsController.cs",
               "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Controllers\\EducationalRecordsController.cs",
               "RelativeDocumentMoniker": "Controllers\\EducationalRecordsController.cs",
               "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Controllers\\EducationalRecordsController.cs",
               "RelativeToolTip": "Controllers\\EducationalRecordsController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAlAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwAYAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T07:51:56.098Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-24T09:50:41.872Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAABgAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-04-24T09:09:53.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-24T09:06:49.223Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAowEsAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-24T08:44:15.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAASAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAFoAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-29T06:32:13.398Z"
+              "WhenOpened": "2024-03-29T06:32:13.398Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "EducationalRecord.cs",
               "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\EducationalRecord.cs",
               "RelativeDocumentMoniker": "Models\\EducationalRecord.cs",
               "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\EducationalRecord.cs",
               "RelativeToolTip": "Models\\EducationalRecord.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAOAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-29T08:41:02.384Z"
             }

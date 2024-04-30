@@ -17,6 +17,7 @@ namespace CoreDashboard.Models
 		public string Rating { get; set; } = null!;
         public string StudyDirection { get; set; } = null!;
         public string Teacher { get; set; } = null!;
+		//public string Hash { get; set; } = null!;
 
     }
 }

@@ -460,3 +460,4 @@ C:\Users\Artemis\Desktop\utmn\6 term\Project Management\CoreDashboard\obj\Debug\
 C:\Users\Artemis\Desktop\utmn\6 term\Project Management\CoreDashboard\obj\Debug\net8.0\CoreDashboard.pdb
 C:\Users\Artemis\Desktop\utmn\6 term\Project Management\CoreDashboard\obj\Debug\net8.0\CoreDashboard.genruntimeconfig.cache
 C:\Users\Artemis\Desktop\utmn\6 term\Project Management\CoreDashboard\obj\Debug\net8.0\ref\CoreDashboard.dll
+C:\Users\Artemis\Desktop\utmn\6 term\Project Management\CoreDashboard\obj\Debug\net8.0\CoreDashboard.sourcelink.json

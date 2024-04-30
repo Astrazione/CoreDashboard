@@ -1,26 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using CoreDashboard;
 using CoreDashboard.Models;
 
 namespace CoreDashboard.Controllers
 {
-    public class EducationalRecordsController : Controller
+    public class EducationalRecordsController(ApplicationContext context) : Controller
     {
-        private readonly ApplicationContext _context;
+        private readonly ApplicationContext _context = context;
+		private static readonly char[] separator = ['\r', '\n'];
 
-        public EducationalRecordsController(ApplicationContext context)
-        {
-            _context = context;
-        }
-
-        // GET: EducationalRecords
-        public async Task<IActionResult> Index()
+		// GET: EducationalRecords
+		public async Task<IActionResult> Index()
         {
             return View((await _context.EducationalRecords.ToListAsync()).Take(500));
         }
@@ -47,98 +37,94 @@ namespace CoreDashboard.Controllers
             return View(educationalRecord);
         }
 
-        [HttpPost]
-        public async Task<string> AddFile(IFormFile uploadedFile)
-        {
-            if (uploadedFile == null || uploadedFile.Length == 0)
-            {
-                return "File not selected or empty.";
-            }
+		[HttpPost]
+		public async Task<string> AddFile(IFormFile uploadedFile)
+		{
+			if (uploadedFile == null || uploadedFile.Length == 0)
+				return "File not selected or empty.";
 
-            // Получение расширения файла
-            var fileExtension = Path.GetExtension(uploadedFile.FileName);
+			// Получение расширения файла
+			var fileExtension = Path.GetExtension(uploadedFile.FileName);
 
-            if (fileExtension is not ".csv")
-            {
-                return "File extension is not supported";
-            }
+			if (fileExtension is not ".csv")
+				return "File extension is not supported";
 
 
-            var filePath = Path.GetTempFileName();
+			var filePath = Path.GetTempFileName();
 
-            using (var stream = new FileStream(filePath, FileMode.Create))
-            {
-                await uploadedFile.CopyToAsync(stream);
-            }
+			using (var stream = new FileStream(filePath, FileMode.Create))
+			{
+				await uploadedFile.CopyToAsync(stream);
+			}
 
-            string fileContent;
-            using (var reader = new StreamReader(filePath))
-            {
-                fileContent = await reader.ReadToEndAsync();
-            }
+			string fileContent;
+			using (var reader = new StreamReader(filePath))
+			{
+				fileContent = await reader.ReadToEndAsync();
+			}
 
-            await _context.AddRangeAsync(ConvertTextToEducationalRecords(fileContent));
-            await _context.SaveChangesAsync();
-            return fileContent;
-        }
+			await _context.AddRangeAsync(ConvertTextToEducationalRecords(fileContent));
+			await _context.SaveChangesAsync();
+			return fileContent;
+		}
 
-        public static IEnumerable<EducationalRecord> ConvertTextToEducationalRecords(string inputText)
-        {
-            List<EducationalRecord> educationalRecords = [];
+		public static IEnumerable<EducationalRecord> ConvertTextToEducationalRecords(string inputText)
+		{
+			List<EducationalRecord> educationalRecords = [];
 
-            var lines = inputText.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+			var lines = inputText.Split(separator, StringSplitOptions.RemoveEmptyEntries);
 
-            for (int i = 1; i < lines.Length; i++)
-            {
-                var values = lines[i].Split(';');
+			for (int i = 1; i < lines.Length; i++)
+			{
+				var values = lines[i].Split(';');
 
-                educationalRecords.Add(new EducationalRecord
-                {
-                    Student = values[0],
-                    DisciplineName = values[1],
-                    GroupName = values[2],
-                    TopicName = values[3],
-                    TopicScore = string.IsNullOrEmpty(values[4]) ? 0 : Convert.ToDecimal(values[4]),
-                    Presence = string.IsNullOrEmpty(values[5]) ? '-' : values[5][0],
-                    ControlPoint = string.IsNullOrEmpty(values[6]) ? 0 : Convert.ToDecimal(values[6]),
-                    TotalScore = Convert.ToDecimal(values[7]),
-                    Rating = values[8],
-                    StudyDirection = values[9],
-                    Teacher = values[10]
-                });
-            }
+				educationalRecords.Add(new EducationalRecord
+				{
+					Student = values[0],
+					DisciplineName = values[1],
+					GroupName = values[2],
+					TopicName = values[3],
+					TopicScore = string.IsNullOrEmpty(values[4]) ? 0 : Convert.ToDecimal(values[4]),
+					Presence = string.IsNullOrEmpty(values[5]) ? '-' : values[5][0],
+					ControlPoint = string.IsNullOrEmpty(values[6]) ? 0 : Convert.ToDecimal(values[6]),
+					TotalScore = Convert.ToDecimal(values[7]),
+					Rating = values[8],
+					StudyDirection = values[9],
+					Teacher = values[10]
+				});
+			}
 
-            return educationalRecords;
-        }
+			return educationalRecords;
+		}
 
-        //public static IEnumerable<EducationalRecord> ConvertTextToEducationalRecords(string inputText)
-        //{
-        //    var lines = inputText.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+		//public static IEnumerable<EducationalRecord> ConvertTextToEducationalRecords(string inputText)
+		//{
+		//    var lines = inputText.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
-        //    for (int i = 1; i < lines.Length; i++)
-        //    {
-        //        var values = lines[i].Split(',');
+		//    for (int i = 1; i < lines.Length; i++)
+		//    {
+		//        var values = lines[i].Split(',');
 
-        //        yield return new EducationalRecord
-        //        {
-        //            Student = values[0],
-        //            DisciplineName = values[1],
-        //            GroupName = values[2],
-        //            TopicName = values[3],
-        //            TopicScore = Convert.ToDecimal(values[4]),
-        //            Presence = string.IsNullOrEmpty(values[5]) ? '\0' : values[5][0],
-        //            ControlPoint = string.IsNullOrEmpty(values[6]) ? 0 : Convert.ToDecimal(values[6]),
-        //            TotalScore = Convert.ToDecimal(values[7]),
-        //            Rating = values[8],
-        //            StudyDirection = values[9],
-        //            Teacher = values[10]
-        //        };
-        //    }
-        //}
+		//        yield return new EducationalRecord
+		//        {
+		//            Student = values[0],
+		//            DisciplineName = values[1],
+		//            GroupName = values[2],
+		//            TopicName = values[3],
+		//            TopicScore = Convert.ToDecimal(values[4]),
+		//            Presence = string.IsNullOrEmpty(values[5]) ? '\0' : values[5][0],
+		//            ControlPoint = string.IsNullOrEmpty(values[6]) ? 0 : Convert.ToDecimal(values[6]),
+		//            TotalScore = Convert.ToDecimal(values[7]),
+		//            Rating = values[8],
+		//            StudyDirection = values[9],
+		//            Teacher = values[10]
+		//        };
+		//    }
+		//}
 
 
-        // GET: EducationalRecords/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+		// GET: EducationalRecords/Edit/5
+		public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
