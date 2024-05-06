@@ -3,6 +3,7 @@ using System;
 using CoreDashboard;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CoreDashboard.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20240501165025_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -96,8 +99,7 @@ namespace CoreDashboard.Migrations
                         .HasColumnName("study_group_name");
 
                     b.Property<int>("TeacherId")
-                        .HasColumnType("integer")
-                        .HasColumnName("teacher_id");
+                        .HasColumnType("integer");
 
                     b.HasKey("StudyGroupId");
 
@@ -134,8 +136,7 @@ namespace CoreDashboard.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("UploadedDbId"));
 
                     b.Property<int>("DisciplineId")
-                        .HasColumnType("integer")
-                        .HasColumnName("discipline_id");
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("UploadDate")
                         .HasColumnType("timestamp with time zone")
@@ -147,8 +148,7 @@ namespace CoreDashboard.Migrations
                         .HasColumnName("uploaded_db_name");
 
                     b.Property<int>("UserId")
-                        .HasColumnType("integer")
-                        .HasColumnName("user_id");
+                        .HasColumnType("integer");
 
                     b.HasKey("UploadedDbId");
 
@@ -178,24 +178,27 @@ namespace CoreDashboard.Migrations
                         .HasColumnName("is_control_point");
 
                     b.Property<int>("PairThemeId")
-                        .HasColumnType("integer")
-                        .HasColumnName("pair_theme_id");
+                        .HasColumnType("integer");
 
                     b.Property<bool>("Presence")
                         .HasColumnType("boolean")
                         .HasColumnName("presence");
+
+                    b.Property<int?>("StudentId")
+                        .HasColumnType("integer");
 
                     b.Property<decimal>("ThemeScore")
                         .HasColumnType("numeric")
                         .HasColumnName("theme_score");
 
                     b.Property<int>("UploadedDbResultId")
-                        .HasColumnType("integer")
-                        .HasColumnName("uploaded_db_result_id");
+                        .HasColumnType("integer");
 
                     b.HasKey("UploadedDbRecordId");
 
                     b.HasIndex("PairThemeId");
+
+                    b.HasIndex("StudentId");
 
                     b.HasIndex("UploadedDbResultId");
 
@@ -216,20 +219,17 @@ namespace CoreDashboard.Migrations
                         .HasColumnName("rating");
 
                     b.Property<int>("StudentId")
-                        .HasColumnType("integer")
-                        .HasColumnName("student_id");
+                        .HasColumnType("integer");
 
                     b.Property<int>("StudyGroupId")
-                        .HasColumnType("integer")
-                        .HasColumnName("study_group_id");
+                        .HasColumnType("integer");
 
                     b.Property<decimal>("TotalScore")
                         .HasColumnType("numeric")
                         .HasColumnName("total_score");
 
                     b.Property<int>("UploadedDbId")
-                        .HasColumnType("integer")
-                        .HasColumnName("uploaded_db_id");
+                        .HasColumnType("integer");
 
                     b.HasKey("UploadedDbResultId");
 
@@ -267,8 +267,7 @@ namespace CoreDashboard.Migrations
                         .HasColumnName("user_password");
 
                     b.Property<int>("UserTypeId")
-                        .HasColumnType("integer")
-                        .HasColumnName("user_type_id");
+                        .HasColumnType("integer");
 
                     b.HasKey("UserId");
 

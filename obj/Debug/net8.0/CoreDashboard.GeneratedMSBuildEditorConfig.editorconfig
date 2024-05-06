@@ -26,22 +26,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Artemis\Desktop\utmn\6 term\Project Management\CoreDashboard
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Artemis/Desktop/utmn/6 term/Project Management/CoreDashboard/Views/EducationalRecords/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2F0aW9uYWxSZWNvcmRzXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Artemis/Desktop/utmn/6 term/Project Management/CoreDashboard/Views/EducationalRecords/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2F0aW9uYWxSZWNvcmRzXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Artemis/Desktop/utmn/6 term/Project Management/CoreDashboard/Views/EducationalRecords/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2F0aW9uYWxSZWNvcmRzXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Artemis/Desktop/utmn/6 term/Project Management/CoreDashboard/Views/EducationalRecords/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2F0aW9uYWxSZWNvcmRzXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Artemis/Desktop/utmn/6 term/Project Management/CoreDashboard/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

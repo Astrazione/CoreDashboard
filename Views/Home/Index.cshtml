@@ -1,7 +1,6 @@
 ﻿@{
 	ViewData["Title"] = "Начальная страница";
 }
-@model CoreDashboard.Models.EducationalRecord
 
 @* <div class="text-center">
 	<h1 class="display-4">Welcome</h1>
@@ -63,7 +62,7 @@
 
 	<div class="download" >
 		<h5 align="center">Загрузить файл</h5>
-		<form asp-action="AddFile" asp-controller="EducationalRecords" method="post" enctype="multipart/form-data">
+		<form asp-action="AddFile" asp-controller="Home" method="post" enctype="multipart/form-data">
 				<div class="mb-3" align="center">
 					<input type="file" name="uploadedFile" class="form-control" accept=".csv, .xlsx" id="formFile">
 					<input style="margin-top: 20px; align-content: center" class="btn btn-primary" type="submit" value="Загрузить базу данных" />

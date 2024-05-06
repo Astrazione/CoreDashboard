@@ -8,7 +8,6 @@ namespace CoreDashboard.Controllers
     public class HomeController(ApplicationContext context) : Controller
     {
 		private readonly ApplicationContext _context = context;
-		private static readonly char[] separator = [ '\r', '\n' ];
 
 		public IActionResult Index()
         {
@@ -41,38 +40,9 @@ namespace CoreDashboard.Controllers
 				fileContent = await reader.ReadToEndAsync();
 			}
 
-			await _context.AddRangeAsync(ConvertTextToEducationalRecords(fileContent));
+			//await _context.AddRangeAsync(ConvertTextToEducationalRecords(fileContent));
 			await _context.SaveChangesAsync();
 			return fileContent;
-		}
-
-		public static IEnumerable<EducationalRecord> ConvertTextToEducationalRecords(string inputText)
-		{
-			List<EducationalRecord> educationalRecords = [];
-
-			var lines = inputText.Split(separator, StringSplitOptions.RemoveEmptyEntries);
-
-			for (int i = 1; i < lines.Length; i++)
-			{
-				var values = lines[i].Split(';');
-
-				educationalRecords.Add(new EducationalRecord
-				{
-					Student = values[0],
-					DisciplineName = values[1],
-					GroupName = values[2],
-					TopicName = values[3],
-					TopicScore = string.IsNullOrEmpty(values[4]) ? 0 : Convert.ToDecimal(values[4]),
-					Presence = string.IsNullOrEmpty(values[5]) ? '-' : values[5][0],
-					ControlPoint = string.IsNullOrEmpty(values[6]) ? 0 : Convert.ToDecimal(values[6]),
-					TotalScore = Convert.ToDecimal(values[7]),
-					Rating = values[8],
-					StudyDirection = values[9],
-					Teacher = values[10]
-				});
-			}
-
-			return educationalRecords;
 		}
 
 		public IActionResult Privacy()

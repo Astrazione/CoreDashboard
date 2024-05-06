@@ -3,6 +3,7 @@ using System;
 using CoreDashboard;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CoreDashboard.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20240501165434_FK-names-corrected")]
+    partial class FKnamescorrected
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -185,6 +188,9 @@ namespace CoreDashboard.Migrations
                         .HasColumnType("boolean")
                         .HasColumnName("presence");
 
+                    b.Property<int?>("StudentId")
+                        .HasColumnType("integer");
+
                     b.Property<decimal>("ThemeScore")
                         .HasColumnType("numeric")
                         .HasColumnName("theme_score");
@@ -196,6 +202,8 @@ namespace CoreDashboard.Migrations
                     b.HasKey("UploadedDbRecordId");
 
                     b.HasIndex("PairThemeId");
+
+                    b.HasIndex("StudentId");
 
                     b.HasIndex("UploadedDbResultId");
 
