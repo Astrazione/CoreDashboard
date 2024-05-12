@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Npgsql;
 using System.Data;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 
 namespace CoreDashboard.Controllers
 {
@@ -17,15 +18,34 @@ namespace CoreDashboard.Controllers
 		NpgsqlConnection conn;
 		NpgsqlCommand cmd;
 
-		public void GetHash()
+		public string GetHash(byte[] salt, string password)
 		{
+			//10000 итераций
+			var pbkdf2 = new Rfc2898DeriveBytes(password, salt, 10000);
 
+			//string->byte array
+			byte[] hash = pbkdf2.GetBytes(20);
+
+			//хранение хэшированного пароля+соли
+			//20(хэш)+16(соль)=36
+			byte[] hashBytes = new byte[36];
+
+			Array.Copy(salt, 0, hashBytes, 0, 16);
+			Array.Copy(hash, 0, hashBytes, 16, 20);
+
+			string passwordHash = Convert.ToBase64String(hashBytes);
+
+			return passwordHash;
 		}
 
 		[HttpPost]
 		public IActionResult Register(string[] fullName, string role, string login, string password)
 		{
 			string result = "";
+
+			byte[] salt;
+			new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+
 			foreach (string name in fullName)
 			{
 				result += name + " ";
@@ -55,7 +75,9 @@ namespace CoreDashboard.Controllers
 				{
 					conn.Open();
 				}
-			
+
+				string pwdHash = GetHash(salt, password);
+
 				cmd = conn.CreateCommand();
 				/*cmd.CommandText = "SELECT COUNT(*) FROM public.\"user\" WHERE user_email = @login";
 				cmd.Parameters.AddWithValue("@login", login);
@@ -70,17 +92,18 @@ namespace CoreDashboard.Controllers
 				}
 				else
 				{*/
-					cmd.CommandText = "INSERT INTO public.\"user\"(user_name, user_email, user_password, user_type_id) VALUES (@fullName, @login, @password, @typeId)";
+					cmd.CommandText = "INSERT INTO public.\"user\"(user_name, user_email, user_password, user_type_id, salt) VALUES (@fullName, @login, @password, @typeId, @salt)";
 					cmd.Parameters.AddWithValue("@fullName", result);
 					cmd.Parameters.AddWithValue("@login", login);
-					cmd.Parameters.AddWithValue("@password", password);
+					cmd.Parameters.AddWithValue("@password", pwdHash);
 					cmd.Parameters.AddWithValue("@typeId", typeId);
+					cmd.Parameters.AddWithValue("@salt", salt);
 					cmd.ExecuteNonQuery();
 
-					if (role == "Администратор") TempData["Role"] = "Администратор";
-					else TempData["Role"] = "Куратор";
-					TempData["UserName"] = result;
-				/*}*/
+				if (role == "Администратор") TempData["Role"] = "Администратор";
+				else TempData["Role"] = "Куратор";
+				TempData["UserName"] = result;
+				
 
 				conn.Close();
 			}
@@ -92,7 +115,7 @@ namespace CoreDashboard.Controllers
 				}
 			}
 
-			
+
 
 			return RedirectToAction("Index", "Home");
 		}

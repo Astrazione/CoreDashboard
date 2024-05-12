@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6i+UmswETQkkKX7bEEG7E7vpXgYe5VUcIHwsKUb2ApLszIzGzhu4yR0zK078rFGRjG/PvnX9ka/yzPOfXdDTQg==",
+  "dgSpecHash": "d6US/Z2XoGhMKKKuNDSJLFgbuqK38nfcW2+5sOOrXVx2LzBPS8JcUDkrb1cywmEpCJCxqu/czq9pPVoJKWEB/w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\CoreDashboard-dev\\CoreDashboard.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\CoreDashboard\\CoreDashboard\\CoreDashboard.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
