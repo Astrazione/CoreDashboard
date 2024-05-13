@@ -42,7 +42,7 @@ namespace CoreDashboard.Migrations
                 name: "student",
                 columns: table => new
                 {
-                    student_id = table.Column<int>(type: "integer", nullable: false)
+                    student_id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     student_name = table.Column<string>(type: "text", nullable: true),
                     student_email = table.Column<string>(type: "text", nullable: true)
@@ -50,6 +50,19 @@ namespace CoreDashboard.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_student", x => x.student_id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "study_direction",
+                columns: table => new
+                {
+                    study_direction_id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    study_direction_name = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_study_direction", x => x.study_direction_id);
                 });
 
             migrationBuilder.CreateTable(
@@ -85,14 +98,14 @@ namespace CoreDashboard.Migrations
                     study_group_id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     study_group_name = table.Column<string>(type: "text", nullable: false),
-                    TeacherId = table.Column<int>(type: "integer", nullable: false)
+                    teacher_id = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_study_group", x => x.study_group_id);
                     table.ForeignKey(
-                        name: "FK_study_group_teacher_TeacherId",
-                        column: x => x.TeacherId,
+                        name: "FK_study_group_teacher_teacher_id",
+                        column: x => x.teacher_id,
                         principalTable: "teacher",
                         principalColumn: "teacher_id",
                         onDelete: ReferentialAction.Cascade);
@@ -107,14 +120,14 @@ namespace CoreDashboard.Migrations
                     user_name = table.Column<string>(type: "text", nullable: false),
                     user_email = table.Column<string>(type: "text", nullable: false),
                     user_password = table.Column<string>(type: "text", nullable: false),
-                    UserTypeId = table.Column<int>(type: "integer", nullable: false)
+                    user_type_id = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_user", x => x.user_id);
                     table.ForeignKey(
-                        name: "FK_user_user_type_UserTypeId",
-                        column: x => x.UserTypeId,
+                        name: "FK_user_user_type_user_type_id",
+                        column: x => x.user_type_id,
                         principalTable: "user_type",
                         principalColumn: "user_type_id",
                         onDelete: ReferentialAction.Cascade);
@@ -127,22 +140,22 @@ namespace CoreDashboard.Migrations
                     uploaded_db_id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     uploaded_db_name = table.Column<string>(type: "text", nullable: false),
-                    upload_date = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    UserId = table.Column<int>(type: "integer", nullable: false),
-                    DisciplineId = table.Column<int>(type: "integer", nullable: false)
+                    upload_date = table.Column<DateTime>(type: "Date", nullable: false),
+                    user_id = table.Column<int>(type: "integer", nullable: false),
+                    discipline_id = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_uploaded_db", x => x.uploaded_db_id);
                     table.ForeignKey(
-                        name: "FK_uploaded_db_discipline_DisciplineId",
-                        column: x => x.DisciplineId,
+                        name: "FK_uploaded_db_discipline_discipline_id",
+                        column: x => x.discipline_id,
                         principalTable: "discipline",
                         principalColumn: "discipline_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_uploaded_db_user_UserId",
-                        column: x => x.UserId,
+                        name: "FK_uploaded_db_user_user_id",
+                        column: x => x.user_id,
                         principalTable: "user",
                         principalColumn: "user_id",
                         onDelete: ReferentialAction.Cascade);
@@ -154,9 +167,10 @@ namespace CoreDashboard.Migrations
                 {
                     uploaded_db_result_id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    UploadedDbId = table.Column<int>(type: "integer", nullable: false),
-                    StudentId = table.Column<int>(type: "integer", nullable: false),
-                    StudyGroupId = table.Column<int>(type: "integer", nullable: false),
+                    uploaded_db_id = table.Column<int>(type: "integer", nullable: false),
+                    student_id = table.Column<long>(type: "bigint", nullable: false),
+                    study_direction_id = table.Column<int>(type: "integer", nullable: false),
+                    study_group_id = table.Column<int>(type: "integer", nullable: false),
                     total_score = table.Column<decimal>(type: "numeric", nullable: false),
                     rating = table.Column<string>(type: "text", nullable: true)
                 },
@@ -164,20 +178,26 @@ namespace CoreDashboard.Migrations
                 {
                     table.PrimaryKey("PK_uploaded_db_result", x => x.uploaded_db_result_id);
                     table.ForeignKey(
-                        name: "FK_uploaded_db_result_student_StudentId",
-                        column: x => x.StudentId,
+                        name: "FK_uploaded_db_result_student_student_id",
+                        column: x => x.student_id,
                         principalTable: "student",
                         principalColumn: "student_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_uploaded_db_result_study_group_StudyGroupId",
-                        column: x => x.StudyGroupId,
+                        name: "FK_uploaded_db_result_study_direction_study_direction_id",
+                        column: x => x.study_direction_id,
+                        principalTable: "study_direction",
+                        principalColumn: "study_direction_id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_uploaded_db_result_study_group_study_group_id",
+                        column: x => x.study_group_id,
                         principalTable: "study_group",
                         principalColumn: "study_group_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_uploaded_db_result_uploaded_db_UploadedDbId",
-                        column: x => x.UploadedDbId,
+                        name: "FK_uploaded_db_result_uploaded_db_uploaded_db_id",
+                        column: x => x.uploaded_db_id,
                         principalTable: "uploaded_db",
                         principalColumn: "uploaded_db_id",
                         onDelete: ReferentialAction.Cascade);
@@ -191,83 +211,77 @@ namespace CoreDashboard.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     theme_score = table.Column<decimal>(type: "numeric", nullable: false),
                     is_control_point = table.Column<bool>(type: "boolean", nullable: false),
-                    presence = table.Column<bool>(type: "boolean", nullable: false),
-                    UploadedDbResultId = table.Column<int>(type: "integer", nullable: false),
-                    PairThemeId = table.Column<int>(type: "integer", nullable: false),
-                    hash = table.Column<string>(type: "text", nullable: false),
-                    StudentId = table.Column<int>(type: "integer", nullable: true)
+                    presence = table.Column<bool>(type: "boolean", nullable: true),
+                    uploaded_db_result_id = table.Column<int>(type: "integer", nullable: false),
+                    pair_theme_id = table.Column<int>(type: "integer", nullable: false),
+                    hash = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_uploaded_db_record", x => x.uploaded_db_record_id);
                     table.ForeignKey(
-                        name: "FK_uploaded_db_record_pair_theme_PairThemeId",
-                        column: x => x.PairThemeId,
+                        name: "FK_uploaded_db_record_pair_theme_pair_theme_id",
+                        column: x => x.pair_theme_id,
                         principalTable: "pair_theme",
                         principalColumn: "pair_theme_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_uploaded_db_record_student_StudentId",
-                        column: x => x.StudentId,
-                        principalTable: "student",
-                        principalColumn: "student_id");
-                    table.ForeignKey(
-                        name: "FK_uploaded_db_record_uploaded_db_result_UploadedDbResultId",
-                        column: x => x.UploadedDbResultId,
+                        name: "FK_uploaded_db_record_uploaded_db_result_uploaded_db_result_id",
+                        column: x => x.uploaded_db_result_id,
                         principalTable: "uploaded_db_result",
                         principalColumn: "uploaded_db_result_id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_study_group_TeacherId",
+                name: "IX_study_group_teacher_id",
                 table: "study_group",
-                column: "TeacherId");
+                column: "teacher_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_uploaded_db_DisciplineId",
+                name: "IX_uploaded_db_discipline_id",
                 table: "uploaded_db",
-                column: "DisciplineId");
+                column: "discipline_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_uploaded_db_UserId",
+                name: "IX_uploaded_db_user_id",
                 table: "uploaded_db",
-                column: "UserId");
+                column: "user_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_uploaded_db_record_PairThemeId",
+                name: "IX_uploaded_db_record_pair_theme_id",
                 table: "uploaded_db_record",
-                column: "PairThemeId");
+                column: "pair_theme_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_uploaded_db_record_StudentId",
+                name: "IX_uploaded_db_record_uploaded_db_result_id",
                 table: "uploaded_db_record",
-                column: "StudentId");
+                column: "uploaded_db_result_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_uploaded_db_record_UploadedDbResultId",
-                table: "uploaded_db_record",
-                column: "UploadedDbResultId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_uploaded_db_result_StudentId",
+                name: "IX_uploaded_db_result_student_id",
                 table: "uploaded_db_result",
-                column: "StudentId");
+                column: "student_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_uploaded_db_result_StudyGroupId",
+                name: "IX_uploaded_db_result_study_direction_id",
                 table: "uploaded_db_result",
-                column: "StudyGroupId");
+                column: "study_direction_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_uploaded_db_result_UploadedDbId",
+                name: "IX_uploaded_db_result_study_group_id",
                 table: "uploaded_db_result",
-                column: "UploadedDbId");
+                column: "study_group_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_user_UserTypeId",
+                name: "IX_uploaded_db_result_uploaded_db_id",
+                table: "uploaded_db_result",
+                column: "uploaded_db_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_user_user_type_id",
                 table: "user",
-                column: "UserTypeId");
+                column: "user_type_id");
         }
 
         /// <inheritdoc />
@@ -284,6 +298,9 @@ namespace CoreDashboard.Migrations
 
             migrationBuilder.DropTable(
                 name: "student");
+
+            migrationBuilder.DropTable(
+                name: "study_direction");
 
             migrationBuilder.DropTable(
                 name: "study_group");

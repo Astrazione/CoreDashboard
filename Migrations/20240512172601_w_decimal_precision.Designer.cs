@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CoreDashboard.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20240501165025_Init")]
-    partial class Init
+    [Migration("20240512172601_w_decimal_precision")]
+    partial class w_decimal_precision
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,12 +64,12 @@ namespace CoreDashboard.Migrations
 
             modelBuilder.Entity("CoreDashboard.Models.Student", b =>
                 {
-                    b.Property<int>("StudentId")
+                    b.Property<long>("StudentId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
+                        .HasColumnType("bigint")
                         .HasColumnName("student_id");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("StudentId"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("StudentId"));
 
                     b.Property<string>("StudentEmail")
                         .HasColumnType("text")
@@ -82,6 +82,24 @@ namespace CoreDashboard.Migrations
                     b.HasKey("StudentId");
 
                     b.ToTable("student");
+                });
+
+            modelBuilder.Entity("CoreDashboard.Models.StudyDirection", b =>
+                {
+                    b.Property<int>("StudyDirectionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("study_direction_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("StudyDirectionId"));
+
+                    b.Property<string>("StudyDirectionName")
+                        .HasColumnType("text")
+                        .HasColumnName("study_direction_name");
+
+                    b.HasKey("StudyDirectionId");
+
+                    b.ToTable("study_direction");
                 });
 
             modelBuilder.Entity("CoreDashboard.Models.StudyGroup", b =>
@@ -99,7 +117,8 @@ namespace CoreDashboard.Migrations
                         .HasColumnName("study_group_name");
 
                     b.Property<int>("TeacherId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("teacher_id");
 
                     b.HasKey("StudyGroupId");
 
@@ -136,10 +155,11 @@ namespace CoreDashboard.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("UploadedDbId"));
 
                     b.Property<int>("DisciplineId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("discipline_id");
 
                     b.Property<DateTime>("UploadDate")
-                        .HasColumnType("timestamp with time zone")
+                        .HasColumnType("Date")
                         .HasColumnName("upload_date");
 
                     b.Property<string>("UploadedDbName")
@@ -148,7 +168,8 @@ namespace CoreDashboard.Migrations
                         .HasColumnName("uploaded_db_name");
 
                     b.Property<int>("UserId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("user_id");
 
                     b.HasKey("UploadedDbId");
 
@@ -178,27 +199,25 @@ namespace CoreDashboard.Migrations
                         .HasColumnName("is_control_point");
 
                     b.Property<int>("PairThemeId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("pair_theme_id");
 
-                    b.Property<bool>("Presence")
+                    b.Property<bool?>("Presence")
                         .HasColumnType("boolean")
                         .HasColumnName("presence");
 
-                    b.Property<int?>("StudentId")
-                        .HasColumnType("integer");
-
-                    b.Property<decimal>("ThemeScore")
-                        .HasColumnType("numeric")
+                    b.Property<decimal?>("ThemeScore")
+                        .HasPrecision(5)
+                        .HasColumnType("numeric(5)")
                         .HasColumnName("theme_score");
 
                     b.Property<int>("UploadedDbResultId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("uploaded_db_result_id");
 
                     b.HasKey("UploadedDbRecordId");
 
                     b.HasIndex("PairThemeId");
-
-                    b.HasIndex("StudentId");
 
                     b.HasIndex("UploadedDbResultId");
 
@@ -218,22 +237,32 @@ namespace CoreDashboard.Migrations
                         .HasColumnType("text")
                         .HasColumnName("rating");
 
-                    b.Property<int>("StudentId")
-                        .HasColumnType("integer");
+                    b.Property<long>("StudentId")
+                        .HasColumnType("bigint")
+                        .HasColumnName("student_id");
+
+                    b.Property<int>("StudyDirectionId")
+                        .HasColumnType("integer")
+                        .HasColumnName("study_direction_id");
 
                     b.Property<int>("StudyGroupId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("study_group_id");
 
                     b.Property<decimal>("TotalScore")
-                        .HasColumnType("numeric")
+                        .HasPrecision(5)
+                        .HasColumnType("numeric(5)")
                         .HasColumnName("total_score");
 
                     b.Property<int>("UploadedDbId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("uploaded_db_id");
 
                     b.HasKey("UploadedDbResultId");
 
                     b.HasIndex("StudentId");
+
+                    b.HasIndex("StudyDirectionId");
 
                     b.HasIndex("StudyGroupId");
 
@@ -267,7 +296,8 @@ namespace CoreDashboard.Migrations
                         .HasColumnName("user_password");
 
                     b.Property<int>("UserTypeId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("user_type_id");
 
                     b.HasKey("UserId");
 
@@ -333,10 +363,6 @@ namespace CoreDashboard.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CoreDashboard.Models.Student", null)
-                        .WithMany("UploadedDbRecords")
-                        .HasForeignKey("StudentId");
-
                     b.HasOne("CoreDashboard.Models.UploadedDbResult", "UploadedDbResult")
                         .WithMany("UploadedDbRecords")
                         .HasForeignKey("UploadedDbResultId")
@@ -351,8 +377,14 @@ namespace CoreDashboard.Migrations
             modelBuilder.Entity("CoreDashboard.Models.UploadedDbResult", b =>
                 {
                     b.HasOne("CoreDashboard.Models.Student", "Student")
-                        .WithMany()
+                        .WithMany("UploadedDbResults")
                         .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CoreDashboard.Models.StudyDirection", "StudyDirection")
+                        .WithMany("UploadedDbResults")
+                        .HasForeignKey("StudyDirectionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -369,6 +401,8 @@ namespace CoreDashboard.Migrations
                         .IsRequired();
 
                     b.Navigation("Student");
+
+                    b.Navigation("StudyDirection");
 
                     b.Navigation("StudyGroup");
 
@@ -398,7 +432,12 @@ namespace CoreDashboard.Migrations
 
             modelBuilder.Entity("CoreDashboard.Models.Student", b =>
                 {
-                    b.Navigation("UploadedDbRecords");
+                    b.Navigation("UploadedDbResults");
+                });
+
+            modelBuilder.Entity("CoreDashboard.Models.StudyDirection", b =>
+                {
+                    b.Navigation("UploadedDbResults");
                 });
 
             modelBuilder.Entity("CoreDashboard.Models.StudyGroup", b =>

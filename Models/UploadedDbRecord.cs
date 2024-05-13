@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreDashboard.Models
@@ -11,13 +12,14 @@ namespace CoreDashboard.Models
 		public int UploadedDbRecordId { get; set; }
 
 		[Column("theme_score")]
-		public decimal ThemeScore { get; set; }
+		[Precision(5, 2)]
+		public decimal? ThemeScore { get; set; }
 
 		[Column("is_control_point")]
 		public bool IsControlPoint { get; set; }
 
 		[Column("presence")]
-		public bool Presence { get; set; }
+		public bool? Presence { get; set; }
 
 		[Column("uploaded_db_result_id")]
 		[ForeignKey("uploaded_db_result_id")]

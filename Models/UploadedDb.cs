@@ -13,7 +13,7 @@ namespace CoreDashboard.Models
 		[Column("uploaded_db_name")]
 		public string UploadedDbName { get; set; } = null!;
 
-		[Column("upload_date")]
+		[Column("upload_date", TypeName = "Date")]
 		public DateTime UploadDate { get; set; }
 
 		[Column("user_id")]

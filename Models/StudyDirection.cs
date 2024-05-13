@@ -11,7 +11,7 @@ namespace CoreDashboard.Models
 		public int StudyDirectionId { get; set; }
 
 		[Column("study_direction_name")]
-		public int StudyDirectionName { get; set; }
+		public string? StudyDirectionName { get; set; }
 
 		public virtual ICollection<UploadedDbResult> UploadedDbResults { get; set; } = [];
 	}

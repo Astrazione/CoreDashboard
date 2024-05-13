@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -17,7 +18,7 @@ namespace CoreDashboard.Models
 
 		[Column("student_id")]
 		[ForeignKey("student_id")]
-		public int StudentId { get; set; }
+		public long StudentId { get; set; }
 
 		[Column("study_direction_id")]
 		[ForeignKey("study_direction_id")]
@@ -28,6 +29,7 @@ namespace CoreDashboard.Models
 		public int StudyGroupId { get; set; }
 
 		[Column("total_score")]
+		[Precision(5, 2)]
 		public decimal TotalScore { get; set; }
 
 		[Column("rating")]

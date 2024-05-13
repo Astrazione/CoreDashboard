@@ -1,7 +1,9 @@
 using CoreDashboard.Models;
+using CoreDashboard.Services.DataUploadingSevice;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using System.Text;
 
 namespace CoreDashboard.Controllers
 {
@@ -11,11 +13,12 @@ namespace CoreDashboard.Controllers
 
 		public IActionResult Index()
         {
-            return View();
+			IEnumerable<UploadedDb> data = _context.UploadedDbs.Include(c => c.Discipline);
+			return View(data);
         }
 
 		[HttpPost]
-		public async Task<string> AddFile(IFormFile uploadedFile)
+		public async Task<string> AddFile(string uploadingDbName, IFormFile uploadedFile)
 		{
 			if (uploadedFile == null || uploadedFile.Length == 0)
 				return "File not selected or empty.";
@@ -35,14 +38,20 @@ namespace CoreDashboard.Controllers
 			}
 
 			string fileContent;
-			using (var reader = new StreamReader(filePath))
+
+			Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+			Encoding encoding = Encoding.GetEncoding("windows-1251");
+
+			using (var reader = new StreamReader(filePath, encoding))
 			{
 				fileContent = await reader.ReadToEndAsync();
 			}
 
-			//await _context.AddRangeAsync(ConvertTextToEducationalRecords(fileContent));
-			await _context.SaveChangesAsync();
-			return fileContent;
+			DataUploader dataUploader = new(_context);
+			CancellationToken cancellationToken = new();
+			string message = await dataUploader.ConvertTextToEducationalRecords(fileContent, uploadingDbName, cancellationToken);
+
+			return message;
 		}
 
 		public IActionResult Privacy()

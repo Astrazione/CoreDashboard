@@ -2,6 +2,8 @@
 	ViewData["Title"] = "Начальная страница";
 }
 
+@model IEnumerable<UploadedDb>
+
 @* <div class="text-center">
 	<h1 class="display-4">Welcome</h1>
 	<p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
@@ -64,6 +66,7 @@
 		<h5 align="center">Загрузить файл</h5>
 		<form asp-action="AddFile" asp-controller="Home" method="post" enctype="multipart/form-data">
 				<div class="mb-3" align="center">
+					<input type="text" name="uploadingDbName" class="form-control" id="formControlTextInput" placeholder="Введите название базы данных...">
 					<input type="file" name="uploadedFile" class="form-control" accept=".csv, .xlsx" id="formFile">
 					<input style="margin-top: 20px; align-content: center" class="btn btn-primary" type="submit" value="Загрузить базу данных" />
 				</div>
@@ -89,6 +92,15 @@
 					</tr>
 				</thead>
 
+				@foreach (var item in Model)
+				{
+					<tbody>
+					<td>@(item.UploadedDbId).</td>
+					<td><a href="">@(item.UploadedDbName)</a></td>
+					<td>@(item.UploadDate)</td>
+					</tbody>
+				}
+
 				<tbody>
 					<td>1.</td>
 					<td><a href="">Программирование и основы алгоритмизации</a></td>
@@ -109,7 +121,7 @@
 
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2"">
+			<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
 				<a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
 				Настроить фильтры</a>
 			</div>
