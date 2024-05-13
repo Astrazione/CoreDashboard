@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CoreDashboard")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f38fd3498208e6ad48a9c9464b5220e2e99ebca9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4275e0319223958f26ac3e3251b05493264b5523")]
 [assembly: System.Reflection.AssemblyProductAttribute("CoreDashboard")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CoreDashboard")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

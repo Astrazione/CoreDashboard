@@ -17,6 +17,16 @@ namespace CoreDashboard
             optionsBuilder.UseNpgsql(Configuration.GetConnectionString("CoreDashboardDatabase"));
         }
 
-        public DbSet<EducationalRecord> EducationalRecords { get; set; } = null!;
+        public DbSet<Discipline> Disciplines { get; set; } = null!;
+        public DbSet<PairTheme> PairThemes { get; set; } = null!;
+        public DbSet<Student> Students { get; set; } = null!;
+        public DbSet<StudyDirection> StudyDirections { get; set; } = null!;
+        public DbSet<StudyGroup> StudyGroups { get; set; } = null!;
+        public DbSet<Teacher> Teachers { get; set; } = null!;
+        public DbSet<UploadedDb> UploadedDbs { get; set; } = null!;
+        public DbSet<UploadedDbRecord> UploadedDbRecords { get; set; } = null!;
+        public DbSet<UploadedDbResult> UploadedDbResults { get; set; } = null!;
+        public DbSet<User> Users { get; set; } = null!;
+        public DbSet<UserType> UserTypes { get; set; } = null!;
     }
 }

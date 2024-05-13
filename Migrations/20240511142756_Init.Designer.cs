@@ -3,6 +3,7 @@ using System;
 using CoreDashboard;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CoreDashboard.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20240511142756_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -203,9 +206,8 @@ namespace CoreDashboard.Migrations
                         .HasColumnType("boolean")
                         .HasColumnName("presence");
 
-                    b.Property<decimal?>("ThemeScore")
-                        .HasPrecision(5, 2)
-                        .HasColumnType("numeric(5,2)")
+                    b.Property<decimal>("ThemeScore")
+                        .HasColumnType("numeric")
                         .HasColumnName("theme_score");
 
                     b.Property<int>("UploadedDbResultId")
@@ -247,8 +249,7 @@ namespace CoreDashboard.Migrations
                         .HasColumnName("study_group_id");
 
                     b.Property<decimal>("TotalScore")
-                        .HasPrecision(5, 2)
-                        .HasColumnType("numeric(5,2)")
+                        .HasColumnType("numeric")
                         .HasColumnName("total_score");
 
                     b.Property<int>("UploadedDbId")
