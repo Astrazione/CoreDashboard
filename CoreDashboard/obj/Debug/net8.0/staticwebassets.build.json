@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8jRcGz5oUhldY0BVKR5OiKzJYOwDsFojLL0M9pYLs4s=",
+  "Hash": "H7bHTtFAJkInE6T2uC3RhJT3iq8xFtsObYSe/vUGclA=",
   "Source": "CoreDashboard",
   "BasePath": "_content/CoreDashboard",
   "Mode": "Default",
@@ -1212,6 +1212,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\CoreDashboard\\CoreDashboard\\wwwroot\\css\\style.css",
+      "SourceId": "CoreDashboard",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\CoreDashboard\\CoreDashboard\\wwwroot\\",
+      "BasePath": "_content/CoreDashboard",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
       "Identity": "C:\\Users\\user\\Desktop\\CoreDashboard\\CoreDashboard\\wwwroot\\favicon.ico",

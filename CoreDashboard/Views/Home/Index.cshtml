@@ -46,11 +46,12 @@
 					}
 				@if (TempData.ContainsKey("UserName"))
 				{
-					<button class="btn brn-outline-success" style="color: white" onclick="location.href='@Url.Action("Logout", "Authorization")'">Выйти</button>
+						<button class="btn brn-outline-success" style="color: white" onclick="location.href='@Url.Action("Authorization", "Home")'">Выйти</button>
 				}
 				else
 				{
-					<button class="btn brn-outline-success" style="color: white" data-bs-toggle="modal" data-bs-target="#Authorization">Войти</button>
+						<button class="btn brn-outline-success" style="color: white" onclick="location.href='@Url.Action("Logour", "Authorization")'">Войти</button>
+					
 				}
 			</div>
 		</div>
@@ -92,7 +93,7 @@
 		</div>
 	</div>
 
-	<div class="modal fade" id="Authorization" tabindex="-1" aria-bs-labelledby="AuthorizationLabel" aria-bs-hidden="true">
+	@* <div class="modal fade" id="Authorization" tabindex="-1" aria-bs-labelledby="AuthorizationLabel" aria-bs-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -109,7 +110,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> *@
 
 	<div class="download" >
 		<h5 align="center">Загрузить файл</h5>
@@ -216,7 +217,7 @@
 		Если авторизация не произведена, то пользователя не будет пускать дальше,
 		будет перманентно открыта форма входа
 	-->
-	@if(!TempData.ContainsKey("UserName")){
+	@* @if(!TempData.ContainsKey("UserName")){
 		<script>
 		$(document).ready(function () {
 			$('#Authorization').modal('show');
@@ -233,6 +234,6 @@
 		});
 
 		</script>
-	}
+	} *@
 
 </body>

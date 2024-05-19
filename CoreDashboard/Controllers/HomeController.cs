@@ -10,11 +10,15 @@ namespace CoreDashboard.Controllers
 		private readonly ApplicationContext _context = context;
 
 		public IActionResult Index()
+		{
+			return View();
+		}
+		public IActionResult Authorization()
         {
             return View();
         }
 
-		[HttpPost]
+        [HttpPost]
 		public async Task<string> AddFile(IFormFile uploadedFile)
 		{
 			if (uploadedFile == null || uploadedFile.Length == 0)
