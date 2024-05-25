@@ -1,0 +1,49 @@
+﻿@model IEnumerable<CoreDashboard.Models.UploadedDb>
+
+@{
+	ViewData["Title"] = "Управление БД";
+}
+
+<h1>Управление загруженными базами данных</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.UploadedDbName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.UploadDate)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.User)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Discipline)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+@foreach (var item in Model) {
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.UploadedDbName)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.UploadDate)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.User!.UserName) (@Html.DisplayFor(modelItem => item.User!.UserType!.UserTypeName))
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Discipline!.DisciplineId)
+			</td>
+			<td>
+				<a asp-action="Edit" class="btn btn-outline-primary" asp-route-id="@item.UploadedDbId">Редактировать</a>
+				<a asp-action="Delete" class="btn btn-outline-danger" asp-route-id="@item.UploadedDbId">Удалить</a>
+			</td>
+		</tr>
+}
+	</tbody>
+</table>

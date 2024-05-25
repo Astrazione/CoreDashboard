@@ -8,10 +8,10 @@ namespace CoreDashboard.Models
 	{
 		[Key]
 		[Column("user_type_id")]
-		public int UserTypeId { get; private set; }
+		public int UserTypeId { get; set; }
 
 		[Column("user_type_name")]
-		public string UserTypeName { get; private set; } = null!;
+		public string UserTypeName { get; set; } = null!;
 
 		public virtual ICollection<User> Users { get; set; } = [];
 	}

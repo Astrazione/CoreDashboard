@@ -4,29 +4,12 @@
 
 @model IEnumerable<UploadedDb>
 
-@* <div class="text-center">
-	<h1 class="display-4">Welcome</h1>
-	<p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-<a asp-controller="EducationalRecords" asp-action="Create" class="btn btn-primary btn-lg" role="button" aria-pressed="true" id="bt">Загрузить</a>
-<a asp-controller="EducationalRecords" asp-action="Index" class="btn btn-primary btn-lg" role="button" aria-pressed="true" id="bt">Посмотреть данные</a>
-<a href="http://localhost:3000/public-dashboards/466cf66a43c1419ca01419042bb3bf15" class="btn btn-primary btn-lg" role="button" aria-pressed="true" id="bt">Посмотреть дашборд</a>
- *@
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="~/lib/select2/dist/css/select2.min.css">
+<script src="~/lib/select2/dist/js/select2.min.js"></script>
+<script src="~/lib/select2/dist/js/i18n/ru.js"></script>
 
-<body>    
-	<nav class="navbar navbar-expand-lg navbar-custom">
-		<div class="container-fluid">
-			<div>
-				<a style="text-decoration: none; color: white" href="#" class="navbar-brand">Жменько Артём Юрьевич (Администратор)</a>
-			</div>
-
-			<div class="d-inline-flex">
-				<button class="btn brn-outline-success" style="color: white" data-bs-toggle="modal" data-bs-target="#exampleModal">Добавить пользователя</button>
-				<button class="btn brn-outline-success" style="color: white">Выход</button>
-			</div>
-		</div>
-	</nav>
-
+<body>
 	<div class="modal fade" id="exampleModal" tabindex="-1" aria-bs-labelledby="exampleModalLabel" aria-bs-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -48,7 +31,7 @@
 									<option value="Студент">Студент</option>
 								</select>
 							</div>
-							
+
 							<input class="form_input" type="text" name="login" placeholder="Логин" required>
 							<input class="form_input" type="password" name="password" placeholder="Пароль" required>
 						</div>
@@ -62,81 +45,86 @@
 		</div>
 	</div>
 
-	<div class="download" >
+	<div class="download" style="gap: 10px">
 		<h5 align="center">Загрузить файл</h5>
 		<form asp-action="AddFile" asp-controller="Home" method="post" enctype="multipart/form-data">
-				<div class="mb-3" align="center">
-					<input type="text" name="uploadingDbName" class="form-control" id="formControlTextInput" placeholder="Введите название базы данных...">
-					<input type="file" name="uploadedFile" class="form-control" accept=".csv, .xlsx" id="formFile">
-					<input style="margin-top: 20px; align-content: center" class="btn btn-primary" type="submit" value="Загрузить базу данных" />
-				</div>
-			</form> 
+			<div class="mb-3" style="width: 40%; margin: auto; margin-top: 20px" align="center">
+				<input type="text" style="margin-bottom: 20px" name="uploadingDbName" class="form-control" id="formControlTextInput" placeholder="Введите название базы данных...">
+				<input type="file" name="uploadedFile" class="form-control" accept=".csv, .xlsx" id="formFile">
+				<input style="margin-top: 20px; align-content: center" class="btn btn-primary" type="submit" value="Загрузить базу данных" />
+			</div>
+		</form>
+	</div>
+
+	<div align="center" style="margin-bottom:20px">
+		<label for="selectObject">Выбранная БД:</label>
+		<select class="js-select2 selectedObject" id="selectObject" name="selectedObjectId">
+			@foreach (var item in Model)
+			{
+				<option value="@item.UploadedDbId">@item.UploadedDbName</option>
+			}
+		</select>
 	</div>
 
 	<div align="center">
-		<a href="http://localhost:3000/d/fdh41jfkh32f4f/dashbord-po-discipline?orgId=1&kiosk" class="btn btn-primary" role="button" aria-pressed="true" id="bt">Дашборд по дисциплине</a>
-		<a href="http://localhost:3000/d/ddjocsn8bey9sf/dashbord-po-narpavlenijam-podgotovki?orgId=1&kiosk" class="btn btn-primary" role="button" aria-pressed="true" id="bt">Дашборд по направлениям обучения</a>
-		<a href="http://localhost:3000/d/bdjiz8df4xz40d/dashbord-po-gruppe?orgId=1&kiosk" class="btn btn-primary" role="button" aria-pressed="true" id="bt">Дашборд по группам</a>
-		<a href="http://localhost:3000/d/bdjmseqm0p5hcc/dashbord-po-studentu?orgId=1&kiosk" class="btn btn-primary" role="button" aria-pressed="true" id="bt">Дашборд по студенту</a>
+		<button class="btn btn-primary" role="button" onclick="openStudyGroupDashboard()" aria-pressed="true" id="bt">Дашборд по группам</button>
+		<button class="btn btn-primary" role="button" onclick="openStudyDirectionDashboard()" aria-pressed="true" id="bt">Дашборд по направлениям обучения</button>
+		<button class="btn btn-primary" role="button" onclick="openStudentDashboard()" aria-pressed="true" id="bt">Дашборд по студенту</button>
 	</div>
 
-	<div class="downloaded" align="center">
-		<h5>Загруженные данные</h5>
-			<div>
+	<div class="downloaded" style="margin-top: 20px" align="center">
+		<h5>Последние 10 загруженных баз данных</h5>
+		<div>
 			<table>
-				<thead> 
+				<thead>
 					<tr>
-					<th>№</th>
-					<th>Название</th>
-					<th>Дата загрузки</th>
+						<th>ID</th>
+						<th>Название</th>
+						<th>Название дисциплины</th>
+						<th>Дата загрузки</th>
 					</tr>
 				</thead>
 
-				@foreach (var item in Model)
+				@foreach (var item in Model.Take(10))
 				{
-					<tbody>
-					<td>@(item.UploadedDbId).</td>
-					<td><a href="">@(item.UploadedDbName)</a></td>
-					<td>@(item.UploadDate)</td>
-					</tbody>
+					<tr>
+						<td>@(item.UploadedDbId).</td>
+						<td>@(item.UploadedDbName)</td>
+						<td>@(item.Discipline!.DisciplineName)</td>
+						<td>@(item.UploadDate.ToShortDateString())</td>
+					</tr>
 				}
-
-				<tbody>
-					<td>1.</td>
-					<td><a href="">Программирование и основы алгоритмизации</a></td>
-					<td>21.01.2023</td>
-				</tbody>
 
 				<tfoot>
 					<tr>
-					<td colspan="2">Общее количество датасетов:</td>
-					<td>1</td>
+						<td colspan="3">Общее количество датасетов:</td>
+						<td>@(Model.Count())</td>
 					</tr>
 				</tfoot>
 			</table>
-			</div>
-	</div>
-	
-	<h3 align="center">Статистика</h3>
-
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-				<a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-				Настроить фильтры</a>
-			</div>
-			<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10" style="background-color: white;">
-				<iframe src=""></iframe>
-			</div>
 		</div>
 	</div>
+
+	<!--<h3 align="center">Статистика</h3>-->
+
+	@* <div class="container-fluid">
+	<div class="row">
+	<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+	<a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+	Настроить фильтры</a>
+	</div>
+	<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10" style="background-color: white;">
+	<iframe src=""></iframe>
+	</div>
+	</div>
+	</div> *@
 
 	<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
 		<div class="offcanvas-header">
 			<h4 class="offcanvas-title" id="offcanvasExampleLabel">Фильтры</h4>
 			<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
 		</div>
-	
+
 		<div class="offcanvas-body">
 			<div class="dropdown">
 				<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
@@ -171,6 +159,31 @@
 		</div>
 	</div>
 
-	<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> -->
+	<script>
+		function openStudyDirectionDashboard() {
+			var selectedId = document.getElementById("selectObject").value;
+			var externalUrl = "http://localhost:3000/d/ddjocsn8bey9s2/dashbord-po-narpavlenijam-podgotovki?orgId=1&var-uploaded_db_id=" + selectedId + "&kiosk";
+			window.open(externalUrl, "_blank");
+		}
 
+		function openStudyGroupDashboard() {
+			var selectedId = document.getElementById("selectObject").value;
+			var externalUrl = "http://localhost:3000/d/ddlf0p8s9perka/dashbord-po-gruppam?orgId=1&var-uploaded_db_id=" + selectedId + "&kiosk";
+			window.open(externalUrl, "_blank");
+		}
+
+		function openStudentDashboard() {
+			var selectedId = document.getElementById("selectObject").value;
+			var externalUrl = "http://localhost:3000/d/bdjmseqm0p5hcd/dashbord-po-studentu?orgId=1&var-uploaded_db_id=" + selectedId + "&kiosk";
+			window.open(externalUrl, "_blank");
+		}
+
+		$(document).ready(function () {
+			$('.js-select2').select2({
+				placeholder: "Выберите город",
+				maximumSelectionLength: 2,
+				language: "ru"
+			});
+		});
+	</script>
 </body>

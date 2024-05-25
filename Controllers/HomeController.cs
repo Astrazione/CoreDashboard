@@ -29,7 +29,6 @@ namespace CoreDashboard.Controllers
 			if (fileExtension is not ".csv")
 				return "File extension is not supported";
 
-
 			var filePath = Path.GetTempFileName();
 
 			using (var stream = new FileStream(filePath, FileMode.Create))
@@ -54,15 +53,10 @@ namespace CoreDashboard.Controllers
 			return message;
 		}
 
-		public IActionResult Privacy()
-        {
-            return View();
-        }
+		public IActionResult Privacy() => View();
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        public IActionResult Error() => 
+			View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }

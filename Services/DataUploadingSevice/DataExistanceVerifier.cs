@@ -24,6 +24,7 @@ namespace CoreDashboard.Services.DataUploadingSevice
 
 		void VerifyStudents()
 		{
+			
 			var students = _records.Select(r => new { r.StudentName, r.Email }).Distinct().ToList();
 			foreach (var student in students)
 			{
@@ -39,7 +40,7 @@ namespace CoreDashboard.Services.DataUploadingSevice
 		void VerifyPairThemes()
 		{
 			var pairThemeNames = _records.Select(r => r.PairThemeName).Distinct().ToList();
-			pairThemeNames.ForEach(themeName => _context.PairThemes.AddIfNotExists(new PairTheme { PairThemeName = themeName }, x => x.PairThemeName == themeName));
+			pairThemeNames.ForEach(themeName => _context.PairThemes.AddIfNotExists(new PairTheme { PairThemeName = themeName, PairTypeId = themeName[themeName.IndexOf(' ') + 1] == 'Л'? 1 : 2 }, x => x.PairThemeName == themeName));
 			_context.SaveChanges();
 		}
 
