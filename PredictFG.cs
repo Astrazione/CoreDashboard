@@ -29,7 +29,7 @@ namespace PredictFinalGrades
         public float x9 { get; set; }
 
         [ColumnName("Label")]
-        public UInt32 FinalGrade { get; set; } // Массив для хранения баллов по всем темам
+        public UInt32 FinalGrade { get; set; } 
 
     }
 
