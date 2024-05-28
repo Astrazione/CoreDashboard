@@ -12,7 +12,7 @@ namespace CoreDashboard.Services.DataUploadingSevice
 		private readonly char _splitChar = ';';
 		private readonly ApplicationContext _context = context;
 
-		public async Task<string> ConvertTextToEducationalRecords(string inputText, string uploadingDbName, CancellationToken cancellationToken)
+		public async Task<string> ConvertTextToEducationalRecords(string inputText, string uploadingDbName, CancellationToken cancellationToken, int userId)
 		{
 			string[] lines = inputText.Split(_separators, StringSplitOptions.RemoveEmptyEntries).Skip(1).ToArray();
 			//try
@@ -30,7 +30,7 @@ namespace CoreDashboard.Services.DataUploadingSevice
 				UploadedDbName = uploadingDbName,
 				UploadDate = DateTime.Now,
 				DisciplineId = discipline.DisciplineId,
-				UserId = 1 //(await _context.Users.FirstAsync(cancellationToken)).UserId,
+				UserId = userId
 			};
 
 			await _context.UploadedDbs.AddAsync(uploadingDb, cancellationToken);

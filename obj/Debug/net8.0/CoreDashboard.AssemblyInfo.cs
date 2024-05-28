@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("a3799b97-6553-4944-a9df-ba5a092680be")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("CoreDashboard")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf386aaf12d6735e015091c51b644880353c2220")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad5c2c649650eef8afcd559f58ff2065463a17c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("CoreDashboard")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CoreDashboard")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

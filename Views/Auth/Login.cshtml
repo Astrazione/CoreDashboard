@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWithoutHeader.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <title>Авторизация</title>
+</head>
+<body>
+    <div class="auth_container">
+        <h1 class="text-center">Авторизация</h1>
+        <form asp-controller="Auth" asp-action="Login" method="post">
+            <div class="form-group form-control-margin">
+                <input class="form-control" type="text" name="login" placeholder="Введите логин" required>
+            </div>
+            <div class="form-group form-control-margin">
+                <input class="form-control" type="password" name="password" placeholder="Введите пароль" required>
+            </div>
+            <div class="form-group form-check form-control-margin">
+                <input type="checkbox" class="form-check-input" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">Запомнить</label>
+            </div>
+            <div class="form-group form-group-btn">
+                <button type="submit" class="btn btn-primary btn-block" style="width: 100px">Войти</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

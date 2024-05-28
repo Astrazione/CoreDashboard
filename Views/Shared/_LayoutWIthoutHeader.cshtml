@@ -1,0 +1,17 @@
+﻿<!-- Views/Shared/LayoutWithoutHeader.cshtml -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - CoreDashboard</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CoreDashboard.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

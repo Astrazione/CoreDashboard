@@ -36,15 +36,18 @@ namespace CoreDashboard
 			// Добавление начальных данных
 			modelBuilder.Entity<PairType>().HasData(
 				new PairType() { PairTypeId = 1, PairTypeName = "Лекция" },
-				new PairType() { PairTypeId = 2, PairTypeName = "Практика" }
-			);
+				new PairType() { PairTypeId = 2, PairTypeName = "Практика" },
+                new PairType() { PairTypeId = 3, PairTypeName = "Консультация" },
+                new PairType() { PairTypeId = 4, PairTypeName = "Аттестация" }
+
+            );
 
 			modelBuilder.Entity<UserType>().HasData(
 				new UserType() { UserTypeId = 1, UserTypeName = "Администратор" },
 				new UserType() { UserTypeId = 2, UserTypeName = "Куратор" }
 			);
 
-			modelBuilder.Entity<User>().HasData(new User() { UserId = 1, UserName = "admin", UserEmail = "admin@ya.ru", UserPassword = "password", UserTypeId = 1 });
+			modelBuilder.Entity<User>().HasData(new User() { UserId = 1, UserName = "admin", UserEmail = "admin@ya.ru", UserPassword = "BF9CB84A9E9BA75835BF9E60F73CBBCA308BD9B83AA11F6923465DA8381DD6BF", UserTypeId = 1 });
 			modelBuilder.Entity<UploadedDb>().HasMany(db => db.UploadedDbResults).WithOne(dbr => dbr.UploadedDb).OnDelete(DeleteBehavior.ClientCascade);
 			modelBuilder.Entity<UploadedDbResult>().HasMany(db => db.UploadedDbRecords).WithOne(dbr => dbr.UploadedDbResult).OnDelete(DeleteBehavior.ClientCascade);
 		}

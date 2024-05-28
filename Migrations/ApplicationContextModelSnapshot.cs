@@ -93,6 +93,16 @@ namespace CoreDashboard.Migrations
                         {
                             PairTypeId = 2,
                             PairTypeName = "Практика"
+                        },
+                        new
+                        {
+                            PairTypeId = 3,
+                            PairTypeName = "Консультация"
+                        },
+                        new
+                        {
+                            PairTypeId = 4,
+                            PairTypeName = "Аттестация"
                         });
                 });
 
@@ -201,7 +211,7 @@ namespace CoreDashboard.Migrations
                         .HasColumnType("text")
                         .HasColumnName("uploaded_db_name");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("integer")
                         .HasColumnName("user_id");
 
@@ -345,7 +355,7 @@ namespace CoreDashboard.Migrations
                             UserId = 1,
                             UserEmail = "admin@ya.ru",
                             UserName = "admin",
-                            UserPassword = "password",
+                            UserPassword = "BF9CB84A9E9BA75835BF9E60F73CBBCA308BD9B83AA11F6923465DA8381DD6BF",
                             UserTypeId = 1
                         });
                 });
@@ -411,9 +421,7 @@ namespace CoreDashboard.Migrations
 
                     b.HasOne("CoreDashboard.Models.User", "User")
                         .WithMany("UploadedDbs")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Discipline");
 

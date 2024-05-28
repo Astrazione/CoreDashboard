@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CoreDashboard.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace CoreDashboard.Controllers
@@ -13,6 +15,7 @@ namespace CoreDashboard.Controllers
         }
 
         // GET: UploadedDbs
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var applicationContext = _context.UploadedDbs
@@ -97,6 +100,21 @@ namespace CoreDashboard.Controllers
             var uploadedDb = await _context.UploadedDbs.FindAsync(id);
             if (uploadedDb != null)
             {
+                //var db = await _context.UploadedDbs
+                //    .Include(u => u.UploadedDbResults)
+                //    .ThenInclude(r => r.UploadedDbRecords)
+                //    .FirstAsync(db => db.UploadedDbId == id);
+
+                //var resultsToRemove = db.UploadedDbResults;
+                //var recordsToRemove = new List<UploadedDbRecord>();
+
+                //foreach (var r in resultsToRemove)
+                //{
+
+                //}
+
+                //_context.RemoveRange(db.UploadedDbResults.Select(dbr => dbr.UploadedDbRecords));
+
                 _context.UploadedDbs.Remove(uploadedDb);
             }
 

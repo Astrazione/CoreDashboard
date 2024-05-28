@@ -37,7 +37,7 @@
 				@Html.DisplayFor(modelItem => item.User!.UserName) (@Html.DisplayFor(modelItem => item.User!.UserType!.UserTypeName))
 			</td>
 			<td>
-				@Html.DisplayFor(modelItem => item.Discipline!.DisciplineId)
+				@Html.DisplayFor(modelItem => item.Discipline!.DisciplineName)
 			</td>
 			<td>
 				<a asp-action="Edit" class="btn btn-outline-primary" asp-route-id="@item.UploadedDbId">Редактировать</a>

@@ -21,7 +21,7 @@ namespace CoreDashboard.Models
 
 		[Column("user_id")]
 		[ForeignKey("user_id")]
-		public int UserId {  get; set; }
+		public int? UserId {  get; set; }
 
 		[Column("discipline_id")]
 		[ForeignKey("discipline_id")]
