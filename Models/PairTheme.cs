@@ -13,6 +13,10 @@ namespace CoreDashboard.Models
 		[Column("pair_theme_name")]
 		public string? PairThemeName { get; set;}
 
+		[Column("pair_type_id")]
+		[ForeignKey("pair_type_id")]
+		public int PairTypeId { get; set; }
+
 		public virtual ICollection<UploadedDbRecord> UploadedDbRecords { get; set; } = [];
 	}
 }

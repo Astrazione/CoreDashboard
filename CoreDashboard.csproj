@@ -4,15 +4,36 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>a3799b97-6553-4944-a9df-ba5a092680be</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.3">
+    <Compile Remove="wwwroot\lib\select2-4.1.0-rc.0\**" />
+    <Content Remove="wwwroot\lib\select2-4.1.0-rc.0\**" />
+    <EmbeddedResource Remove="wwwroot\lib\select2-4.1.0-rc.0\**" />
+    <None Remove="wwwroot\lib\select2-4.1.0-rc.0\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Migrations\20240525131002_ViewsMigration.cs.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Migrations\20240525131002_ViewsMigration.cs.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.ML.FastTree" Version="3.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.2" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
   </ItemGroup>
 
 </Project>

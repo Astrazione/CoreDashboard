@@ -1,19 +1,24 @@
 using CoreDashboard.Models;
 using CoreDashboard.Services.DataUploadingSevice;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using System.Security.Claims;
 using System.Text;
 
 namespace CoreDashboard.Controllers
 {
+	[Authorize]
     public class HomeController(ApplicationContext context) : Controller
     {
 		private readonly ApplicationContext _context = context;
 
 		public IActionResult Index()
         {
-			IEnumerable<UploadedDb> data = _context.UploadedDbs.Include(c => c.Discipline);
+			IEnumerable<UploadedDb> data = _context.UploadedDbs
+				.Include(c => c.Discipline)
+				.Include(c => c.User);
 			return View(data);
         }
 
@@ -28,7 +33,6 @@ namespace CoreDashboard.Controllers
 
 			if (fileExtension is not ".csv")
 				return "File extension is not supported";
-
 
 			var filePath = Path.GetTempFileName();
 
@@ -49,20 +53,20 @@ namespace CoreDashboard.Controllers
 
 			DataUploader dataUploader = new(_context);
 			CancellationToken cancellationToken = new();
-			string message = await dataUploader.ConvertTextToEducationalRecords(fileContent, uploadingDbName, cancellationToken);
+
+			var email = HttpContext.User.FindFirstValue(ClaimTypes.Email);
+
+            int userId = _context.Users.First(u => u.UserEmail == email).UserId;
+
+			string message = await dataUploader.ConvertTextToEducationalRecords(fileContent, uploadingDbName, cancellationToken, userId);
 
 			return message;
 		}
 
-		public IActionResult Privacy()
-        {
-            return View();
-        }
+		public IActionResult Privacy() => View();
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        public IActionResult Error() => 
+			View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }

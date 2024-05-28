@@ -17,7 +17,7 @@ namespace CoreDashboard.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.3")
+                .HasAnnotation("ProductVersion", "8.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -54,9 +54,56 @@ namespace CoreDashboard.Migrations
                         .HasColumnType("text")
                         .HasColumnName("pair_theme_name");
 
+                    b.Property<int>("PairTypeId")
+                        .HasColumnType("integer")
+                        .HasColumnName("pair_type_id");
+
                     b.HasKey("PairThemeId");
 
+                    b.HasIndex("PairTypeId");
+
                     b.ToTable("pair_theme");
+                });
+
+            modelBuilder.Entity("CoreDashboard.Models.PairType", b =>
+                {
+                    b.Property<int>("PairTypeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("pair_type_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("PairTypeId"));
+
+                    b.Property<string>("PairTypeName")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("pair_type_name");
+
+                    b.HasKey("PairTypeId");
+
+                    b.ToTable("pair_type");
+
+                    b.HasData(
+                        new
+                        {
+                            PairTypeId = 1,
+                            PairTypeName = "Лекция"
+                        },
+                        new
+                        {
+                            PairTypeId = 2,
+                            PairTypeName = "Практика"
+                        },
+                        new
+                        {
+                            PairTypeId = 3,
+                            PairTypeName = "Консультация"
+                        },
+                        new
+                        {
+                            PairTypeId = 4,
+                            PairTypeName = "Аттестация"
+                        });
                 });
 
             modelBuilder.Entity("CoreDashboard.Models.Student", b =>
@@ -164,7 +211,7 @@ namespace CoreDashboard.Migrations
                         .HasColumnType("text")
                         .HasColumnName("uploaded_db_name");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("integer")
                         .HasColumnName("user_id");
 
@@ -301,6 +348,16 @@ namespace CoreDashboard.Migrations
                     b.HasIndex("UserTypeId");
 
                     b.ToTable("user");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            UserEmail = "admin@ya.ru",
+                            UserName = "admin",
+                            UserPassword = "BF9CB84A9E9BA75835BF9E60F73CBBCA308BD9B83AA11F6923465DA8381DD6BF",
+                            UserTypeId = 1
+                        });
                 });
 
             modelBuilder.Entity("CoreDashboard.Models.UserType", b =>
@@ -320,6 +377,27 @@ namespace CoreDashboard.Migrations
                     b.HasKey("UserTypeId");
 
                     b.ToTable("user_type");
+
+                    b.HasData(
+                        new
+                        {
+                            UserTypeId = 1,
+                            UserTypeName = "Администратор"
+                        },
+                        new
+                        {
+                            UserTypeId = 2,
+                            UserTypeName = "Куратор"
+                        });
+                });
+
+            modelBuilder.Entity("CoreDashboard.Models.PairTheme", b =>
+                {
+                    b.HasOne("CoreDashboard.Models.PairType", null)
+                        .WithMany("PairThemes")
+                        .HasForeignKey("PairTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("CoreDashboard.Models.StudyGroup", b =>
@@ -343,9 +421,7 @@ namespace CoreDashboard.Migrations
 
                     b.HasOne("CoreDashboard.Models.User", "User")
                         .WithMany("UploadedDbs")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Discipline");
 
@@ -363,7 +439,7 @@ namespace CoreDashboard.Migrations
                     b.HasOne("CoreDashboard.Models.UploadedDbResult", "UploadedDbResult")
                         .WithMany("UploadedDbRecords")
                         .HasForeignKey("UploadedDbResultId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
 
                     b.Navigation("PairTheme");
@@ -394,7 +470,7 @@ namespace CoreDashboard.Migrations
                     b.HasOne("CoreDashboard.Models.UploadedDb", "UploadedDb")
                         .WithMany("UploadedDbResults")
                         .HasForeignKey("UploadedDbId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
 
                     b.Navigation("Student");
@@ -425,6 +501,11 @@ namespace CoreDashboard.Migrations
             modelBuilder.Entity("CoreDashboard.Models.PairTheme", b =>
                 {
                     b.Navigation("UploadedDbRecords");
+                });
+
+            modelBuilder.Entity("CoreDashboard.Models.PairType", b =>
+                {
+                    b.Navigation("PairThemes");
                 });
 
             modelBuilder.Entity("CoreDashboard.Models.Student", b =>

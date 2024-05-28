@@ -1,4 +1,5 @@
 ﻿using CoreDashboard.Extensions;
+using CoreDashboard.Migrations;
 using CoreDashboard.Models;
 using CoreDashboard.Models.Extras;
 
@@ -24,6 +25,7 @@ namespace CoreDashboard.Services.DataUploadingSevice
 
 		void VerifyStudents()
 		{
+			
 			var students = _records.Select(r => new { r.StudentName, r.Email }).Distinct().ToList();
 			foreach (var student in students)
 			{
@@ -38,10 +40,37 @@ namespace CoreDashboard.Services.DataUploadingSevice
 
 		void VerifyPairThemes()
 		{
-			var pairThemeNames = _records.Select(r => r.PairThemeName).Distinct().ToList();
-			pairThemeNames.ForEach(themeName => _context.PairThemes.AddIfNotExists(new PairTheme { PairThemeName = themeName }, x => x.PairThemeName == themeName));
+			var pairs = _records.Select(r => new { r.PairThemeName, r.GroupName }).Distinct().ToList();
+			pairs.ForEach(pair => _context.PairThemes.AddIfNotExists(new PairTheme { PairThemeName = pair.PairThemeName, PairTypeId = GetPairType(pair.GroupName) }, x => x.PairThemeName == pair.PairThemeName));
 			_context.SaveChanges();
 		}
+
+		int GetPairType(string groupName)
+		{
+			var groupNameTag = GetGroupNameTag(groupName);
+
+            return groupNameTag[0] switch
+            {
+                'л' => 1,
+                'п' => 2,
+                'к' => 3,
+                'а' => 4,
+                _ => 2
+            };
+        }
+
+		string GetGroupNameTag(string groupName)
+		{
+            groupName = groupName.Trim().ToLower();
+
+            int startIndex = groupName.IndexOf(' ') + 1;
+            int endIndex = groupName.IndexOf('-');
+
+            if (startIndex >= 0 && endIndex > startIndex)
+                return groupName[startIndex..endIndex];
+
+            return string.Empty;
+        }
 
 		void VerifyStudyDirections()
 		{
