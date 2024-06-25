@@ -1,46 +1,50 @@
 ﻿@model IEnumerable<CoreDashboard.Models.User>
+@using System.Security.Claims;
 
 @{
-    ViewData["Title"] = "Пользователи";
+	ViewData["Title"] = "Пользователи";
 }
 
 <h1>Пользователи</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-primary">Зарегистрировать нового пользователя</a>
+	<a asp-action="Create" class="btn btn-primary">Зарегистрировать нового пользователя</a>
 </p>
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UserName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserEmail)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserType)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.UserName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.UserEmail)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.UserType)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
 @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserEmail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserType!.UserTypeName)
-            </td>
-            <td>
-                <a asp-action="Edit" class="btn btn-outline-primary" asp-route-id="@item.UserId">Редактировать</a>
-                <a asp-action="Delete" class="btn btn-outline-danger" asp-route-id="@item.UserId">Удалить</a>
-            </td>
-        </tr>
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.UserName)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.UserEmail)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.UserType!.UserTypeName)
+			</td>
+			<td>
+				@if (User.FindFirstValue(ClaimsIdentity.DefaultRoleClaimType) == "Администратор" || item.UserEmail == User.FindFirstValue(ClaimTypes.Email))
+				{
+					<a asp-action="Edit" class="btn btn-outline-primary" asp-route-id="@item.UserId">Редактировать</a>
+					<a asp-action="Delete" class="btn btn-outline-danger" asp-route-id="@item.UserId">Удалить</a>
+				}
+			</td>
+		</tr>
 }
-    </tbody>
+	</tbody>
 </table>

@@ -9,7 +9,11 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationContext>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-	.AddCookie(options => options.LoginPath = "/login");
+	.AddCookie(options =>
+	{
+		options.LoginPath = "/login";
+		options.AccessDeniedPath = "/AccessDenied";
+	});
 builder.Services.AddAuthorization();
 
 var app = builder.Build();

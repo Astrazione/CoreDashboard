@@ -21,7 +21,7 @@ namespace CoreDashboard.Controllers
 			return View();
 		}
 
-		[AllowAnonymous]
+        [AllowAnonymous]
 		[HttpPost("/login")]
 		public async Task<IResult> Login(string? returnUrl)
 		{
@@ -30,8 +30,8 @@ namespace CoreDashboard.Controllers
 			if (!form.ContainsKey("login") || !form.ContainsKey("password"))
 				return Results.BadRequest("Email и/или пароль не установлены");
 
-			string email = form["login"];
-			string password = form["password"];
+			string email = form["login"].ToString() ?? "";
+			string password = form["password"].ToString() ?? "";
 
 			string hash = Cryptography.CreateSHA256(email + password);
 
@@ -42,7 +42,7 @@ namespace CoreDashboard.Controllers
 			if (user is null) return Results.Unauthorized();
 
 			var claims = new List<Claim>
-			{
+			{	
 				new(ClaimsIdentity.DefaultNameClaimType, user.UserName),
 				new(ClaimTypes.Email, user.UserEmail),
 				new(ClaimsIdentity.DefaultRoleClaimType, user.UserType!.UserTypeName)
@@ -59,6 +59,13 @@ namespace CoreDashboard.Controllers
 		{
 			await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 			return Results.Redirect("/login");
+		}
+
+		[AllowAnonymous]
+		[HttpGet("/AccessDenied")]
+		public IActionResult AccessDenied()
+		{
+			return View();
 		}
 	}
 }

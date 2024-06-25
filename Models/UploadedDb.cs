@@ -16,7 +16,7 @@ namespace CoreDashboard.Models
 
 		[Column("upload_date", TypeName = "Date")]
 		[Display(Name = "Дата загрузки")]
-		[DisplayFormat(DataFormatString = "{0:d}")]
+		[DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
 		public DateTime UploadDate { get; set; }
 
 		[Column("user_id")]

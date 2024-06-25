@@ -14,8 +14,11 @@
 		<h5 align="center">Загрузить файл</h5>
 		<form asp-action="AddFile" asp-controller="Home" method="post" enctype="multipart/form-data">
 			<div class="mb-3" style="width: 40%; margin: auto; margin-top: 20px" align="center">
-				<input type="text" style="margin-bottom: 20px" name="uploadingDbName" class="form-control" id="formControlTextInput" placeholder="Введите название базы данных...">
-				<input type="file" name="uploadedFile" class="form-control" accept=".csv, .xlsx" id="formFile">
+				<input type="text" style="margin-bottom: 20px" name="uploadingDbName" class="form-control" id="formControlTextInput" placeholder="Введите название базы данных..." required>
+				<div class="mb-3">
+					<input type="file" name="uploadedFile" class="form-control" accept=".csv" id="formFile" required>
+					<div class="invalid-feedback">Добавьте файл в формате .csv</div>
+				</div>
 				<input style="margin-top: 20px; align-content: center" class="btn btn-primary" type="submit" value="Загрузить базу данных" />
 			</div>
 		</form>
@@ -51,7 +54,7 @@
 					</tr>
 				</thead>
 
-				@foreach (var item in Model.Take(10))
+				@foreach (var item in Model.TakeLast(10).Reverse())
 				{
 					<tr>
 						<td>@(item.UploadedDbId).</td>
@@ -64,7 +67,7 @@
 
 				<tfoot>
 					<tr>
-						<td colspan="4">Общее количество датасетов:</td>
+						<td colspan="4">Общее количество загруженных баз данных:</td>
 						<td>@(Model.Count())</td>
 					</tr>
 				</tfoot>
@@ -75,28 +78,31 @@
 	<script>
 		function openStudyDirectionDashboard() {
 			var selectedId = document.getElementById("selectObject").value;
-			var externalUrl = "http://localhost:3000/d/ddjocsn8bey9s2/dashbord-po-narpavlenijam-podgotovki?orgId=1&var-uploaded_db_id=" + selectedId + "&kiosk";
+			//port 3001 for docker, 3000 for local launch (default grafana port)
+			var externalUrl = "http://localhost:3001/d/ddjocsn8bey9s2/dashbord-po-narpavlenijam-podgotovki?orgId=1&var-uploaded_db_id=" + selectedId + "&kiosk";
 			window.open(externalUrl, "_blank");
 		}
 
 		function openStudyGroupDashboard() {
 			var selectedId = document.getElementById("selectObject").value;
-			var externalUrl = "http://localhost:3000/d/ddlf0p8s9perka/dashbord-po-gruppam?orgId=1&var-uploaded_db_id=" + selectedId + "&kiosk";
+			var externalUrl = "http://localhost:3001/d/ddlf0p8s9perka/dashbord-po-gruppam?orgId=1&var-uploaded_db_id=" + selectedId + "&kiosk";
 			window.open(externalUrl, "_blank");
 		}
 
 		function openStudentDashboard() {
 			var selectedId = document.getElementById("selectObject").value;
-			var externalUrl = "http://localhost:3000/d/bdjmseqm0p5hcd/dashbord-po-studentu?orgId=1&var-uploaded_db_id=" + selectedId + "&kiosk";
+			var externalUrl = "http://localhost:3001/d/bdjmseqm0p5hcd/dashbord-po-studentu?orgId=1&var-uploaded_db_id=" + selectedId + "&kiosk";
 			window.open(externalUrl, "_blank");
 		}
 
 		$(document).ready(function () {
 			$('.js-select2').select2({
-				placeholder: "Выберите БД",
+				placeholder: "выберите БД",
 				maximumSelectionLength: 2,
 				language: "ru"
 			});
 		});
+
+		document.addEventListener()
 	</script>
 </body>

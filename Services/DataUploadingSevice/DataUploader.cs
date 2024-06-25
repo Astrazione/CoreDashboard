@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using CoreDashboard.Models;
 using CoreDashboard.Models.Extras;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
+using static CoreDashboard.Services.DataUploadingSevice.DataGetters;
 using System.Diagnostics;
+using System.Threading;
 
 namespace CoreDashboard.Services.DataUploadingSevice
 {
@@ -15,13 +16,11 @@ namespace CoreDashboard.Services.DataUploadingSevice
 		public async Task<string> ConvertTextToEducationalRecords(string inputText, string uploadingDbName, CancellationToken cancellationToken, int userId)
 		{
 			string[] lines = inputText.Split(_separators, StringSplitOptions.RemoveEmptyEntries).Skip(1).ToArray();
-			//try
-			//{
 			string[] firstDataRow = lines[1].Split(_splitChar);
 			string disciplineName = firstDataRow[0];
 
 			if (await IsUploadedDbWithNameExistsAsync(uploadingDbName, cancellationToken))
-				return "база данных с таким названием уже существует";
+				return "База данных с таким названием уже существует";
 
 			Discipline discipline = await AddDisciplineIfNotExistsAsync(disciplineName, cancellationToken);
 
@@ -46,21 +45,22 @@ namespace CoreDashboard.Services.DataUploadingSevice
 
 			var data = records.Zip(controlPoints, (x, y) => (x, y));
 
-			///TODO: compute hash
 			///TODO: determine the similarity measure of the dataset
 
 			Stopwatch sw = Stopwatch.StartNew();
 
-			DataExistanceVerifier verifier = new(_context, records);
-			verifier.Verify();
+			DataExistanceVerifier verifier = new(_context, records, uploadingDb);
+			await verifier.Verify(cancellationToken);
 
 			sw.Stop();
 			await Console.Out.WriteLineAsync($"Verifying time: {sw.Elapsed.TotalMilliseconds} ms");
 			sw.Restart();
 
+			var uploadedDbResults = verifier.UploadedDbResults;
+
 			foreach (var (record, isControlPoint) in data)
 			{
-				UploadedDbResult uploadedDbResult = await GetOrCreateDbResultAsync(record, uploadingDb, cancellationToken);
+				UploadedDbResult uploadedDbResult = GetDbResultByRecord(uploadedDbResults, record, uploadingDb);
 				UploadedDbRecord uploadedDbRecord = CreateDbRecord(record, uploadedDbResult, isControlPoint);
 				await _context.AddAsync(uploadedDbRecord, cancellationToken);
 			}
@@ -73,46 +73,20 @@ namespace CoreDashboard.Services.DataUploadingSevice
 
 			sw.Stop();
 			await Console.Out.WriteLineAsync($"Saving time: {sw.Elapsed.TotalMilliseconds} ms");
+
 			return "База данных успешно загружена";
-			//}
-			//catch (Exception e)
-			//{
-			//	return $"Во время загрузки базы данных произошла ошибка: {e.Message}\n" +
-			//		$"Inner exception: {e.InnerException}";
-			//}
 		}
 
-		public async Task<UploadedDbResult> GetOrCreateDbResultAsync(EducationalRecord record, UploadedDb uploadingDb, CancellationToken cancellationToken)
+		public UploadedDbResult GetDbResultByRecord(IEnumerable<UploadedDbResult> uploadedDbResults, EducationalRecord record, UploadedDb uploadingDb)
 		{
-			long studentId = GetExistingStudentId(record);
-
-			var uploadedDbResult = await _context.UploadedDbResults
-				.Include(dbResult => dbResult.StudyGroup)
-				.Include(dbResult => dbResult.StudyDirection)
-			.FirstOrDefaultAsync(
-				dbResult => dbResult.StudentId == studentId &&
-				dbResult.StudyDirection!.StudyDirectionName == record.StudyDirectionName &&
-				dbResult.StudyGroup!.StudyGroupName == record.GroupName &&
-				dbResult.TotalScore == record.TotalScore &&
-				dbResult.UploadedDbId == uploadingDb.UploadedDbId,
-				cancellationToken);
-
-			if (uploadedDbResult is null)
-			{
-				uploadedDbResult = new()
-				{
-					UploadedDbId = uploadingDb.UploadedDbId,
-					StudentId = studentId,
-					StudyDirectionId = (await _context.StudyDirections.FirstAsync(sd => sd.StudyDirectionName == record.StudyDirectionName, cancellationToken)).StudyDirectionId,
-					StudyGroupId = (await _context.StudyGroups.FirstAsync(sd => sd.StudyGroupName == record.GroupName, cancellationToken)).StudyGroupId,
-					TotalScore = record.TotalScore,
-					Rating = record.Rating
-				};
-				await _context.UploadedDbResults.AddAsync(uploadedDbResult, cancellationToken);
-				await _context.SaveChangesAsync(cancellationToken);
-			}
-
-			return uploadedDbResult;
+			return uploadedDbResults
+				.First(
+					dbResult => dbResult.Student!.StudentName == record.StudentName &&
+					dbResult.StudyDirection!.StudyDirectionName == record.StudyDirectionName &&
+					dbResult.StudyGroup!.StudyGroupName == record.GroupName &&
+					dbResult.TotalScore == record.TotalScore &&
+					dbResult.UploadedDbId == uploadingDb.UploadedDbId
+				);
 		}
 
 		public UploadedDbRecord CreateDbRecord(EducationalRecord record, UploadedDbResult uploadedDbResult, bool isControlPoint)
@@ -123,8 +97,7 @@ namespace CoreDashboard.Services.DataUploadingSevice
 				IsControlPoint = isControlPoint,
 				Presence = record.Presence,
 				UploadedDbResultId = uploadedDbResult.UploadedDbResultId,
-				PairThemeId = _context.PairThemes.First(theme => theme.PairThemeName == record.PairThemeName).PairThemeId,
-				Hash = ""
+				PairThemeId = _context.PairThemes.First(theme => theme.PairThemeName == record.PairThemeName).PairThemeId
 			};
 		}
 
@@ -146,19 +119,6 @@ namespace CoreDashboard.Services.DataUploadingSevice
 			return processedEducationalRecords;
 		}
 
-		public List<bool> GetControlPoints(IEnumerable<EducationalRecord> educationalRecords)
-		{
-			List<bool> controlPoints = [];
-			var groupedControlPointsDict = educationalRecords
-				.GroupBy(er => new { er.GroupName, er.PairThemeName })
-				.ToDictionary(group => group.Key, group => group.Any(er => er.ControlPoint is not null));
-
-			foreach (var er in educationalRecords)
-				controlPoints.Add(groupedControlPointsDict[new { er.GroupName, er.PairThemeName }]);
-
-			return controlPoints;
-		}
-
 		public async Task<bool> IsUploadedDbWithNameExistsAsync(string uploadedDbName, CancellationToken cancellationToken) =>
 			await _context.UploadedDbs.AnyAsync(uploadedDb => uploadedDb.UploadedDbName == uploadedDbName, cancellationToken);
 
@@ -172,28 +132,6 @@ namespace CoreDashboard.Services.DataUploadingSevice
 				await _context.SaveChangesAsync(cancellationToken);
 			}
 			return discipline;
-		}
-
-		public long GetExistingStudentId(EducationalRecord record)
-		{
-			if (string.IsNullOrEmpty(record.Email))
-				return _context.Students
-					.First(student => student.StudentId >= 10_000_000_000 && student.StudentName == record.StudentName).StudentId;
-
-			string startString = "stud", endString = "@";
-			int startIndex = record.Email.IndexOf(startString);
-			int endIndex = record.Email.IndexOf(endString);
-
-			if (startIndex != -1 && endIndex != -1)
-			{
-				bool result = long.TryParse(record.Email.Substring(startIndex + startString.Length, endIndex - startString.Length), out long id);
-				if (result)
-					return id;
-				else
-					return -1;
-			}
-			else
-				return -1;
 		}
 	}
 }

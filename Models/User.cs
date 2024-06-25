@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreDashboard.Models
@@ -32,7 +33,7 @@ namespace CoreDashboard.Models
 
 		[Column("user_password")]
         [Display(Name = "Пароль")]
-        public string UserPassword { get; set; } = null!;
+        public virtual string UserPassword { get; set; } = null!;
 
 		[Column("user_type_id")]
 		[ForeignKey("user_type_id")]

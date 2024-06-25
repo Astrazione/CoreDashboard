@@ -1,5 +1,9 @@
 ﻿@using System.Security.Claims;
 
+@{
+	bool showModal = ViewBag.Notification is not null ? true : false;
+}
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -31,6 +35,24 @@
 			</div>
 		</nav>
 	</header>
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header d-flex justify-content-center">
+					<h1 class="modal-title fs-5" id="exampleModalLabel">Уведомление</h1>
+				</div>
+				<div class="modal-body text-center">
+					@ViewBag.Notification
+				</div>
+				<div class="modal-footer d-flex justify-content-center">
+					<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Закрыть</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="container">
 		<main role="main" class="pb-3">
 			@RenderBody()
@@ -44,6 +66,12 @@
 	</footer>
 	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="~/js/site.js" asp-append-version="true"></script>
+	<script>
+		$(document).ready(function() {
+			if('@showModal' === 'True')
+				$('#exampleModal').modal('show');
+		});
+	</script>
 	@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
