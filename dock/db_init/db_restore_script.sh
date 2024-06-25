@@ -1,0 +1,1 @@
+pg_restore -U postgres -d core_dashboard -v "db_init/core_dashboard.sql"

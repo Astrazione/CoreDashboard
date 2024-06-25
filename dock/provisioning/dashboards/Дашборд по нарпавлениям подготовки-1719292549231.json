@@ -1,0 +1,1032 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": 10,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 16,
+        "x": 0,
+        "y": 0
+      },
+      "id": 6,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "# Дашборд по направлениям подготовки",
+        "mode": "markdown"
+      },
+      "pluginVersion": "10.4.0",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "cdh3z4c122fb4e"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 53,
+        "w": 7,
+        "x": 17,
+        "y": 0
+      },
+      "id": 3,
+      "options": {
+        "alwaysVisibleFilter": true,
+        "autoScroll": false,
+        "customValue": false,
+        "displayMode": "table",
+        "emptyValue": false,
+        "favorites": true,
+        "filter": true,
+        "groupSelection": false,
+        "header": true,
+        "padding": 10,
+        "persistent": false,
+        "saveSelectedGroup": false,
+        "saveSelectedGroupKey": "",
+        "showLabel": false,
+        "showName": false,
+        "statusSort": false,
+        "sticky": true,
+        "variable": "study_direction"
+      },
+      "type": "volkovlabs-variable-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 17,
+        "x": 0,
+        "y": 2
+      },
+      "id": 7,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "# \"$discipline\", $semester семестр",
+        "mode": "markdown"
+      },
+      "pluginVersion": "10.4.0",
+      "title": "Дисциплина",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "cdh3z4c122fb4e"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [
+            {
+              "options": {
+                "неудовл.": {
+                  "color": "red",
+                  "index": 3,
+                  "text": "Неудовлетворительно"
+                },
+                "отл.": {
+                  "color": "blue",
+                  "index": 0,
+                  "text": "Отлично"
+                },
+                "удовл.": {
+                  "color": "yellow",
+                  "index": 2,
+                  "text": "Удовлетворительно"
+                },
+                "хор.": {
+                  "color": "green",
+                  "index": 1,
+                  "text": "Хорошо"
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "match": "empty",
+                "result": {
+                  "color": "#7a7a7a",
+                  "index": 4,
+                  "text": "Отсутствует/неявка"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-red",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 9,
+        "x": 0,
+        "y": 5
+      },
+      "id": 2,
+      "options": {
+        "barRadius": 0.1,
+        "barWidth": 0.97,
+        "colorByField": "Оценка",
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "orientation": "horizontal",
+        "showValue": "auto",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "cdh3z4c122fb4e"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT rating AS \"Оценка\", COUNT(*) AS \"Количество студентов с оценкой\"\r\nFROM (\r\n  SELECT rating FROM uploaded_db_result dbr\r\n  JOIN study_direction sd ON dbr.study_direction_id = sd.study_direction_id\r\n  WHERE study_direction_name = ANY(ARRAY[${study_direction:sqlstring}]) AND uploaded_db_id = $uploaded_db_id\r\n  GROUP BY rating, student_id\r\n)\r\nGROUP BY rating\r\nORDER BY\r\n  CASE rating\r\n        WHEN 'отл.' THEN 1\r\n        WHEN 'хор.' THEN 2\r\n        WHEN 'удовл.' THEN 3\r\n        WHEN 'неудовл.' THEN 4\r\n        WHEN 'неявка' THEN 5\r\n        ELSE 6\r\n    END;",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Диаграмма распределения оценок по выбранным направлениям",
+      "transparent": true,
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "cdh3z4c122fb4e"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 100,
+          "min": 20,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 61
+              },
+              {
+                "color": "green",
+                "value": 76
+              },
+              {
+                "color": "blue",
+                "value": 91
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 4,
+        "x": 9,
+        "y": 5
+      },
+      "id": 4,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "cdh3z4c122fb4e"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT AVG(total_score) FROM uploaded_db_result dbr\r\nJOIN study_direction sd ON dbr.study_direction_id = sd.study_direction_id\r\nWHERE study_direction_name = ANY(ARRAY[${study_direction:sqlstring}]) AND uploaded_db_id = $uploaded_db_id",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Средний итоговый балл",
+      "transparent": true,
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "cdh3z4c122fb4e"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 100,
+          "min": 20,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 60
+              },
+              {
+                "color": "green",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 4,
+        "x": 13,
+        "y": 5
+      },
+      "id": 5,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "cdh3z4c122fb4e"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT\r\n  CASE WHEN SUM(CASE WHEN presence = true OR presence = false THEN 1 ELSE 0 END) = 0 THEN NULL\r\n\tELSE ROUND(SUM(CASE WHEN presence = true THEN 1 ELSE 0 END) * 100.0 / SUM(CASE WHEN presence = true OR presence = false THEN 1 ELSE 0 END), 2) END AS student_presence_percent\r\nFROM direction_db_presence\r\nWHERE study_direction_name = ANY(ARRAY[${study_direction:sqlstring}]) AND uploaded_db_id = $uploaded_db_id",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Посещаемость",
+      "transparent": true,
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "cdh3z4c122fb4e"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "filterable": true,
+            "inspect": false
+          },
+          "fieldMinMax": false,
+          "mappings": [],
+          "noValue": "-",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Количество студентов"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "gauge",
+                  "valueDisplayMode": "text"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "blue",
+                      "value": null
+                    },
+                    {
+                      "color": "green",
+                      "value": 50
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "custom.width",
+                "value": 211
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Процент посещаемости"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "gauge",
+                  "valueDisplayMode": "color"
+                }
+              },
+              {
+                "id": "min",
+                "value": 40
+              },
+              {
+                "id": "max",
+                "value": 100
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "red",
+                      "value": null
+                    },
+                    {
+                      "color": "yellow",
+                      "value": 60
+                    },
+                    {
+                      "color": "green",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "unit",
+                "value": "percent"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Средний итоговый балл"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "lcd",
+                  "type": "gauge",
+                  "valueDisplayMode": "color"
+                }
+              },
+              {
+                "id": "min",
+                "value": 50
+              },
+              {
+                "id": "max",
+                "value": 100
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "red",
+                      "value": null
+                    },
+                    {
+                      "color": "yellow",
+                      "value": 61
+                    },
+                    {
+                      "color": "green",
+                      "value": 76
+                    },
+                    {
+                      "color": "blue",
+                      "value": 91
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Направление подготовки"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 581
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 22,
+        "w": 17,
+        "x": 0,
+        "y": 14
+      },
+      "id": 1,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "enablePagination": false,
+          "fields": "",
+          "reducer": [
+            "stdDev"
+          ],
+          "show": true
+        },
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "cdh3z4c122fb4e"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT\r\n\tstudy_direction_name as \"Направление подготовки\",\r\n\tstudents_count as \"Количество студентов\",\r\n\tdirection_presence.direction_presence_percent as \"Процент посещаемости\",\r\n\tavg_total_score as \"Средний итоговый балл\"\r\nFROM (\r\n\tSELECT study_direction_id, study_direction_name, AVG(total_score) as avg_total_score, COUNT(*) as students_count \r\n\tFROM (\r\n\t\tSELECT dbr.study_direction_id, total_score, study_direction_name, student_id FROM uploaded_db_result dbr\r\n\t\tJOIN study_direction sd ON dbr.study_direction_id = sd.study_direction_id\r\n\t\tWHERE uploaded_db_id = $uploaded_db_id AND study_direction_name = ANY(ARRAY[${study_direction:sqlstring}])\r\n\t\tGROUP BY student_id, dbr.study_direction_id, total_score, study_direction_name, student_id\r\n\t)\r\n\tGROUP BY study_direction_id, study_direction_name\r\n) main\r\nJOIN (\r\n\tSELECT\r\n\t\tstudy_direction_id,\r\n\t\tCASE WHEN SUM(CASE WHEN presence = true OR presence = false THEN 1 ELSE 0 END) = 0 THEN NULL\r\n\t\tELSE ROUND(SUM(CASE WHEN presence = true THEN 1 ELSE 0 END) * 100.0 / \r\n    SUM(CASE WHEN presence = true OR presence = false THEN 1 ELSE 0 END), 2) END AS direction_presence_percent\r\n\tFROM direction_db_presence\r\n\tWHERE uploaded_db_id = $uploaded_db_id AND study_direction_name = ANY(ARRAY[${study_direction:sqlstring}])\r\n\tGROUP BY study_direction_id\r\n) direction_presence ON main.study_direction_id = direction_presence.study_direction_id",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Таблица успеваемости по направлениям",
+      "transparent": true,
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "cdh3z4c122fb4e"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "filterable": true,
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Итоговый балл"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "lcd",
+                  "type": "gauge",
+                  "valueDisplayMode": "color"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "red"
+                    },
+                    {
+                      "color": "yellow",
+                      "value": 61
+                    },
+                    {
+                      "color": "green",
+                      "value": 76
+                    },
+                    {
+                      "color": "#6ED0E0",
+                      "value": 91
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "min",
+                "value": 50
+              },
+              {
+                "id": "max",
+                "value": 100
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Процент посещаемости"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "gauge",
+                  "valueDisplayMode": "color"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "red"
+                    },
+                    {
+                      "color": "yellow",
+                      "value": 60
+                    },
+                    {
+                      "color": "green",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "min",
+                "value": 40
+              },
+              {
+                "id": "max",
+                "value": 100
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Идентификатор студента"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 215
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Названия групп"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 259
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ID студента"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 126
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 17,
+        "w": 17,
+        "x": 0,
+        "y": 36
+      },
+      "id": 8,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "stdDev"
+          ],
+          "show": true
+        },
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "Процент посещаемости"
+          }
+        ]
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "cdh3z4c122fb4e"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT\r\n\tmain.student_id as \"ID студента\",\r\n\tstudent_name as \"ФИО студента\",\r\n\tstudy_direction_name as \"Направление подготовки\",\r\n\tstudent_presence.student_presence_percent as \"Процент посещаемости\",\r\n\ttotal_score as \"Итоговый балл\"\r\nFROM (\r\n\tSELECT s.student_id, s.student_name, study_direction_name, total_score FROM uploaded_db_result dbr\r\n\tJOIN student s ON dbr.student_id = s.student_id\r\n\tJOIN study_direction sd ON dbr.study_direction_id = sd.study_direction_id\r\n\tWHERE uploaded_db_id = $uploaded_db_id AND study_direction_name = ANY(ARRAY[${study_direction:sqlstring}])\r\n\tGROUP BY s.student_id, total_score, study_direction_name\r\n\t) main\r\nJOIN (\r\n\tSELECT\r\n\t\tstudent_id,\r\n\t\tCASE WHEN SUM(CASE WHEN presence = true OR presence = false THEN 1 ELSE 0 END) = 0 THEN NULL\r\n\t\tELSE ROUND(SUM(CASE WHEN presence = true THEN 1 ELSE 0 END) * 100.0 / SUM(CASE WHEN presence = true OR presence = false THEN 1 ELSE 0 END), 2) END AS student_presence_percent,\r\n\t\tuploaded_db_id\r\n\tFROM student_db_presence\r\n\tWHERE uploaded_db_id = $uploaded_db_id AND study_direction_name = ANY(ARRAY[${study_direction:sqlstring}])\r\n\tGROUP BY student_id, uploaded_db_id\r\n) student_presence ON main.student_id = student_presence.student_id",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Студенты",
+      "transparent": true,
+      "type": "table"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "isNone": true,
+          "selected": false,
+          "text": "None",
+          "value": ""
+        },
+        "datasource": {
+          "type": "grafana-postgresql-datasource",
+          "uid": "cdh3z4c122fb4e"
+        },
+        "definition": "select uploaded_db_id from uploaded_db",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Загруженная БД",
+        "multi": false,
+        "name": "uploaded_db_id",
+        "options": [],
+        "query": "select uploaded_db_id from uploaded_db",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": {
+          "type": "grafana-postgresql-datasource",
+          "uid": "cdh3z4c122fb4e"
+        },
+        "definition": "SELECT study_direction_name FROM study_direction",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Направление подготовки",
+        "multi": true,
+        "name": "study_direction",
+        "options": [],
+        "query": "SELECT study_direction_name FROM study_direction",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "Программирование и основы алгоритмизации",
+          "value": "Программирование и основы алгоритмизации"
+        },
+        "datasource": {
+          "type": "grafana-postgresql-datasource",
+          "uid": "cdh3z4c122fb4e"
+        },
+        "definition": "SELECT reverse(substring(reverse(discipline_name) FROM position(' ' IN reverse(discipline_name)) + 1)) FROM uploaded_db db\nJOIN discipline d ON db.discipline_id = d.discipline_id\nWHERE uploaded_db_id = $uploaded_db_id",
+        "error": {},
+        "hide": 0,
+        "includeAll": false,
+        "label": "Дисциплина",
+        "multi": false,
+        "name": "discipline",
+        "options": [],
+        "query": "SELECT reverse(substring(reverse(discipline_name) FROM position(' ' IN reverse(discipline_name)) + 1)) FROM uploaded_db db\nJOIN discipline d ON db.discipline_id = d.discipline_id\nWHERE uploaded_db_id = $uploaded_db_id",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "1",
+          "value": "1"
+        },
+        "datasource": {
+          "type": "grafana-postgresql-datasource",
+          "uid": "cdh3z4c122fb4e"
+        },
+        "definition": "SELECT reverse(substring(reverse(discipline_name) FROM 1 FOR position(' ' IN reverse(discipline_name)) - 1)) FROM uploaded_db db\nJOIN discipline d ON db.discipline_id = d.discipline_id\nWHERE uploaded_db_id = $uploaded_db_id",
+        "error": {},
+        "hide": 0,
+        "includeAll": false,
+        "label": "Семестр",
+        "multi": false,
+        "name": "semester",
+        "options": [],
+        "query": "SELECT reverse(substring(reverse(discipline_name) FROM 1 FOR position(' ' IN reverse(discipline_name)) - 1)) FROM uploaded_db db\nJOIN discipline d ON db.discipline_id = d.discipline_id\nWHERE uploaded_db_id = $uploaded_db_id",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "hidden": true
+  },
+  "timezone": "browser",
+  "title": "Дашборд по нарпавлениям подготовки",
+  "uid": "ddjocsn8bey9s2",
+  "version": 41,
+  "weekStart": ""
+}

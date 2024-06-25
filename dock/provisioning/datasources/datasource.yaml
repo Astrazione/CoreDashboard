@@ -1,0 +1,22 @@
+apiVersion: 1
+
+deleteDatasources:
+  - name: Graphite
+    orgId: 1
+
+datasources:
+  - name: grafana-postgresql-datasource
+    type: postgres
+    access: proxy
+    orgId: 1
+    uid: cdh3z4c122fb4e
+    url: postgres_container:5432
+    user: postgres
+    database: core_dashboard
+    isDefault: true
+    jsonData:
+      postgresVersion: 1600
+      sslmode: 'disable'
+    secureJsonData:
+      password: postgres
+    editable: true
