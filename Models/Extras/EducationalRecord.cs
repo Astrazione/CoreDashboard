@@ -24,12 +24,12 @@ namespace CoreDashboard.Models.Extras
 			StudentName = values[2];
 			GroupName = values[3];
 			PairThemeName = values[4];
-			PairScore = string.IsNullOrEmpty(values[5]) ? null : decimal.Parse(values[5], NumberStyles.Any, CultureInfo.CurrentCulture);
+			PairScore = string.IsNullOrEmpty(values[5]) ? null : decimal.Parse(values[5].Replace(',', '.'), NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
 			Presence = string.IsNullOrEmpty(values[6])
 				? null
-				: values[6].Equals("П", StringComparison.CurrentCultureIgnoreCase);
-			ControlPoint = string.IsNullOrEmpty(values[7]) ? null : decimal.Parse(values[7], NumberStyles.Any, CultureInfo.CurrentCulture);
-			TotalScore = decimal.Parse(values[8], NumberStyles.Any, CultureInfo.CurrentCulture);
+				: values[6].Equals("П", StringComparison.InvariantCultureIgnoreCase);
+			ControlPoint = string.IsNullOrEmpty(values[7]) ? null : decimal.Parse(values[7].Replace(',', '.'), NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
+			TotalScore = decimal.Parse(values[8].Replace(',', '.'), NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
 			Rating = values[9];
 			Email = values[10];
 			StudyDirectionName = values[11];

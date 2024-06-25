@@ -16,6 +16,10 @@ namespace CoreDashboard.Controllers
 
 		public IActionResult Index()
         {
+			TempData.TryGetValue("Notification", out object? obj);
+			ViewBag.Notification = obj is null ? null : obj as string;
+			
+
 			IEnumerable<UploadedDb> data = _context.UploadedDbs
 				.Include(c => c.Discipline)
 				.Include(c => c.User);
@@ -23,16 +27,22 @@ namespace CoreDashboard.Controllers
         }
 
 		[HttpPost]
-		public async Task<string> AddFile(string uploadingDbName, IFormFile uploadedFile)
+		public async Task<IActionResult> AddFile(string uploadingDbName, IFormFile uploadedFile)
 		{
 			if (uploadedFile == null || uploadedFile.Length == 0)
-				return "File not selected or empty.";
+			{
+				ViewBag.Notificaion = "Файл не выбран или пуст";
+				return View();
+			}
 
 			// Получение расширения файла
 			var fileExtension = Path.GetExtension(uploadedFile.FileName);
 
 			if (fileExtension is not ".csv")
-				return "File extension is not supported";
+			{
+				ViewBag.Notificaion = "Расширение файла не поддерживается. Загрузите файл с расширением csv.";
+				return View();
+			}
 
 			var filePath = Path.GetTempFileName();
 
@@ -55,12 +65,13 @@ namespace CoreDashboard.Controllers
 			CancellationToken cancellationToken = new();
 
 			var email = HttpContext.User.FindFirstValue(ClaimTypes.Email);
-
             int userId = _context.Users.First(u => u.UserEmail == email).UserId;
 
 			string message = await dataUploader.ConvertTextToEducationalRecords(fileContent, uploadingDbName, cancellationToken, userId);
 
-			return message;
+			TempData.Add("Notification", message);
+
+			return RedirectToAction(nameof(Index));
 		}
 
 		public IActionResult Privacy() => View();

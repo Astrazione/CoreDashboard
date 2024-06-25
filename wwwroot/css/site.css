@@ -125,3 +125,10 @@ iframe {
 	display: flex;
 	justify-content: center;
 }
+
+.body-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}

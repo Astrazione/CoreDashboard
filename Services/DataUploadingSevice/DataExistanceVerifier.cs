@@ -2,6 +2,8 @@
 using CoreDashboard.Migrations;
 using CoreDashboard.Models;
 using CoreDashboard.Models.Extras;
+using Microsoft.EntityFrameworkCore;
+using static CoreDashboard.Services.DataUploadingSevice.DataGetters;
 
 namespace CoreDashboard.Services.DataUploadingSevice
 {
@@ -9,74 +11,103 @@ namespace CoreDashboard.Services.DataUploadingSevice
 	{
 		readonly ApplicationContext _context;
 		readonly IEnumerable<EducationalRecord> _records;
+		readonly UploadedDb _uploadedDb;
 
-		public DataExistanceVerifier(ApplicationContext context, IEnumerable<EducationalRecord> records) => 
-			(_context, _records) = (context, records);
+		public List<UploadedDbResult> UploadedDbResults { get; } = [];
 
-		public void Verify()
+		public DataExistanceVerifier(ApplicationContext context, IEnumerable<EducationalRecord> records, UploadedDb uploadedDb) => 
+			(_context, _records, _uploadedDb) = (context, records, uploadedDb);
+
+		public async Task Verify(CancellationToken cancellationToken)
 		{
 			VerifyStudents();
 			VerifyPairThemes();
 			VerifyStudyDirections();
 			VerifyTeachers();
+			await _context.SaveChangesAsync(cancellationToken);
 			VerifyStudyGroups();
-			_context.SaveChanges();
+			await _context.SaveChangesAsync(cancellationToken);
+
+			await VerifyResults(cancellationToken);
+			await _context.SaveChangesAsync(cancellationToken);
+		}
+
+		async Task VerifyResults(CancellationToken cancellationToken)
+		{
+			var uniqueResultsUnformated = _records.Select(r => new UploadedDbResult
+			{
+				Student = GetExistingStudent(r),
+				UploadedDbId = _uploadedDb.UploadedDbId,
+				StudyDirection = _context.StudyDirections.First(sd => sd.StudyDirectionName == r.StudyDirectionName),
+				StudyGroup = _context.StudyGroups.First(sd => sd.StudyGroupName == r.GroupName),
+				TotalScore = r.TotalScore,
+				Rating = r.Rating
+			})
+				.Distinct()
+				.ToList();
+
+			foreach (var result in uniqueResultsUnformated)
+			{
+				var uploadedDbResult = await _context.UploadedDbResults
+					.Include(r => r.StudyGroup)
+					.Include(r => r.StudyDirection)
+					.FirstOrDefaultAsync(
+						dbResult => dbResult.StudentId == result.StudentId &&
+						dbResult.StudyDirectionId == result.StudyDirection!.StudyDirectionId &&
+						dbResult.StudyGroupId == result.StudyGroup!.StudyGroupId &&
+						dbResult.TotalScore == result.TotalScore &&
+						dbResult.UploadedDbId == result.UploadedDbId,
+						cancellationToken);
+
+				if (uploadedDbResult is null)
+				{
+					UploadedDbResults.Add(result);
+					await _context.UploadedDbResults.AddAsync(result, cancellationToken);
+				}
+				else
+					UploadedDbResults.Add(uploadedDbResult);
+			}
 		}
 
 		void VerifyStudents()
 		{
-			
-			var students = _records.Select(r => new { r.StudentName, r.Email }).Distinct().ToList();
+			var students = _records.Select(r => new { r.StudentName, r.Email })
+				.Distinct()
+				.Select(r => 
+					new Student { 
+						StudentName = r.StudentName, 
+						StudentEmail = r.Email 
+					})
+				.ToList();
+
 			foreach (var student in students)
 			{
-				long studentId = GetStudentIdFromEmail(student.Email);
+				long studentId = GetStudentIdFromEmail(student.StudentEmail);
 
 				if (studentId == -1)
-					VerifyStudentWithoutId(student.StudentName, student.Email);
+					studentId = VerifyStudentWithoutId(student.StudentName!, student.StudentEmail!);
 				else
-					VerifyStudent(studentId, student.StudentName, student.Email);
+					VerifyStudent(studentId, student.StudentName!, student.StudentEmail!);
 			}
 		}
 
 		void VerifyPairThemes()
 		{
-			var pairs = _records.Select(r => new { r.PairThemeName, r.GroupName }).Distinct().ToList();
-			pairs.ForEach(pair => _context.PairThemes.AddIfNotExists(new PairTheme { PairThemeName = pair.PairThemeName, PairTypeId = GetPairType(pair.GroupName) }, x => x.PairThemeName == pair.PairThemeName));
+			var pairs = _records.Select(r => new { r.PairThemeName, r.GroupName })
+				.Distinct()
+				.Select(r => new PairTheme { PairThemeName = r.PairThemeName, PairTypeId = GetPairType(r.GroupName) })
+				.ToList();
+
+			foreach (var pair in pairs)
+				_context.PairThemes.AddIfNotExists(pair, x => x.PairThemeName == pair.PairThemeName);
+
 			_context.SaveChanges();
 		}
-
-		int GetPairType(string groupName)
-		{
-			var groupNameTag = GetGroupNameTag(groupName);
-
-            return groupNameTag[0] switch
-            {
-                'л' => 1,
-                'п' => 2,
-                'к' => 3,
-                'а' => 4,
-                _ => 2
-            };
-        }
-
-		string GetGroupNameTag(string groupName)
-		{
-            groupName = groupName.Trim().ToLower();
-
-            int startIndex = groupName.IndexOf(' ') + 1;
-            int endIndex = groupName.IndexOf('-');
-
-            if (startIndex >= 0 && endIndex > startIndex)
-                return groupName[startIndex..endIndex];
-
-            return string.Empty;
-        }
 
 		void VerifyStudyDirections()
 		{
 			var studyDirections = _records.Select(r => r.StudyDirectionName).Distinct().ToList();
 			studyDirections.ForEach(sdName => _context.StudyDirections.AddIfNotExists(new StudyDirection { StudyDirectionName = sdName }, x => x.StudyDirectionName == sdName));
-			_context.SaveChanges();
 		}
 
 		void VerifyStudyGroups()
@@ -85,45 +116,35 @@ namespace CoreDashboard.Services.DataUploadingSevice
 			studyGroups.ForEach(group => _context.StudyGroups.AddIfNotExists(
 				new StudyGroup { 
 					StudyGroupName = group.GroupName, 
-					TeacherId = _context.Teachers.First(t => t.TeacherName == group.TeacherName).TeacherId }, x => x.StudyGroupName == group.GroupName));
-			_context.SaveChanges();
+					TeacherId = _context.Teachers.First(t => t.TeacherName == group.TeacherName).TeacherId 
+				}, x => x.StudyGroupName == group.GroupName));
 		}
 
 		void VerifyTeachers()
 		{
 			var teachers = _records.Select(r => r.TeacherName).Distinct().ToList();
 			teachers.ForEach(teacher => _context.Teachers.AddIfNotExists(new Teacher { TeacherName = teacher }, x => x.TeacherName == teacher));
-			_context.SaveChanges();
 		}
 
-		void VerifyStudentWithoutId(string name, string email)
+		long VerifyStudentWithoutId(string name, string email)
 		{
-			long nextFreeId = _context.Students.Count() > 0 ? Math.Max(_context.Students.Max(x => x.StudentId), 10_000_000_000) + 1 : 10_000_000_000;
+			long nextFreeId = _context.Students.Any() ? Math.Max(_context.Students.Max(x => x.StudentId), 10_000_000_000) + 1 : 10_000_000_000;
 			_context.Students.AddIfNotExists(new() { StudentId = nextFreeId, StudentName = name, StudentEmail = email }, x => x.StudentName == name);
 			_context.SaveChanges();
+			return nextFreeId;
 		}
 
 		void VerifyStudent(long id, string name, string email) =>
 			_context.Students.AddIfNotExists(new Student { StudentId = id, StudentName = name, StudentEmail = email }, x => x.StudentId == id);
 
-		public static long GetStudentIdFromEmail(string? email)
+		public Student GetExistingStudent(EducationalRecord record)
 		{
-			if (string.IsNullOrEmpty(email))
-				return -1;
+			if (string.IsNullOrEmpty(record.Email))
+				return _context.Students
+					.First(student => student.StudentId >= 10_000_000_000 && student.StudentName == record.StudentName);
 
-			string startString = "stud", endString = "@";
-			int startIndex = email.IndexOf(startString);
-			int endIndex = email.IndexOf(endString);
-
-			if (startIndex != -1 && endIndex != -1)
-			{
-				bool result = long.TryParse(email.Substring(startIndex + startString.Length, endIndex - startString.Length), out long id);
-				if (result)
-					return id;
-				else return -1;
-			}
-			else
-				return -1;
+			return _context.Students
+					.First(student => student.StudentId == GetStudentIdFromEmail(record.Email));
 		}
 	}
 }

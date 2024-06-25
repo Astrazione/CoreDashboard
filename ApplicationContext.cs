@@ -47,7 +47,7 @@ namespace CoreDashboard
 				new UserType() { UserTypeId = 2, UserTypeName = "Куратор" }
 			);
 
-			modelBuilder.Entity<User>().HasData(new User() { UserId = 1, UserName = "admin", UserEmail = "admin@ya.ru", UserPassword = "BF9CB84A9E9BA75835BF9E60F73CBBCA308BD9B83AA11F6923465DA8381DD6BF", UserTypeId = 1 });
+			modelBuilder.Entity<User>().HasData(new User() { UserId = 1, UserName = "Default admin", UserEmail = "admin@utmn.ru", UserPassword = "E56A7E1B9F08E6158E6977CD72A6AD297F681ABB6D1BF3B0573CDED5BDEAC611", UserTypeId = 1 });
 			modelBuilder.Entity<UploadedDb>().HasMany(db => db.UploadedDbResults).WithOne(dbr => dbr.UploadedDb).OnDelete(DeleteBehavior.ClientCascade);
 			modelBuilder.Entity<UploadedDbResult>().HasMany(db => db.UploadedDbRecords).WithOne(dbr => dbr.UploadedDbResult).OnDelete(DeleteBehavior.ClientCascade);
 		}

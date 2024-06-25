@@ -233,11 +233,6 @@ namespace CoreDashboard.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("UploadedDbRecordId"));
 
-                    b.Property<string>("Hash")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("hash");
-
                     b.Property<bool>("IsControlPoint")
                         .HasColumnType("boolean")
                         .HasColumnName("is_control_point");
@@ -251,8 +246,8 @@ namespace CoreDashboard.Migrations
                         .HasColumnName("presence");
 
                     b.Property<decimal?>("ThemeScore")
-                        .HasPrecision(5, 2)
-                        .HasColumnType("numeric(5,2)")
+                        .HasPrecision(7, 2)
+                        .HasColumnType("numeric(7,2)")
                         .HasColumnName("theme_score");
 
                     b.Property<int>("UploadedDbResultId")
@@ -294,8 +289,8 @@ namespace CoreDashboard.Migrations
                         .HasColumnName("study_group_id");
 
                     b.Property<decimal>("TotalScore")
-                        .HasPrecision(5, 2)
-                        .HasColumnType("numeric(5,2)")
+                        .HasPrecision(7, 2)
+                        .HasColumnType("numeric(7,2)")
                         .HasColumnName("total_score");
 
                     b.Property<int>("UploadedDbId")
@@ -353,9 +348,9 @@ namespace CoreDashboard.Migrations
                         new
                         {
                             UserId = 1,
-                            UserEmail = "admin@ya.ru",
-                            UserName = "admin",
-                            UserPassword = "BF9CB84A9E9BA75835BF9E60F73CBBCA308BD9B83AA11F6923465DA8381DD6BF",
+                            UserEmail = "admin@utmn.ru",
+                            UserName = "Default admin",
+                            UserPassword = "E56A7E1B9F08E6158E6977CD72A6AD297F681ABB6D1BF3B0573CDED5BDEAC611",
                             UserTypeId = 1
                         });
                 });

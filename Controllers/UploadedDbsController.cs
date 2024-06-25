@@ -1,130 +1,131 @@
 ﻿using CoreDashboard.Models;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace CoreDashboard.Controllers
 {
-    public class UploadedDbsController : Controller
-    {
-        private readonly ApplicationContext _context;
+	[Authorize]
+	public class UploadedDbsController : Controller
+	{
+		private readonly ApplicationContext _context;
 
-        public UploadedDbsController(ApplicationContext context)
-        {
-            _context = context;
-        }
+		public UploadedDbsController(ApplicationContext context)
+		{
+			_context = context;
+		}
 
-        // GET: UploadedDbs
-        [Authorize]
-        public async Task<IActionResult> Index()
-        {
-            var applicationContext = _context.UploadedDbs
-                .Include(u => u.Discipline)
-                .Include(u => u.User)
-                .ThenInclude(u => u!.UserType);
-            return View(await applicationContext.ToListAsync());
-        }
+		public async Task<IActionResult> Index()
+		{
+			var applicationContext = _context.UploadedDbs
+				.Include(u => u.Discipline)
+				.Include(u => u.User)
+				.ThenInclude(u => u!.UserType);
+			return View(await applicationContext.ToListAsync());
+		}
 
-        // GET: UploadedDbs/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-                return NotFound();
+		public async Task<IActionResult> Edit(int? id)
+		{
+			if (id is null)
+				return NotFound();
 
-            var uploadedDb = await _context.UploadedDbs.FindAsync(id);
+			var uploadedDb = await _context.UploadedDbs.Include(db => db.User).FirstOrDefaultAsync(db => db.UploadedDbId == id);
 
-            if (uploadedDb == null)
-                return NotFound();
+			if (uploadedDb is null)
+				return NotFound();
 
-            return View(uploadedDb);
-        }
+			if (!(User.FindFirstValue(ClaimsIdentity.DefaultRoleClaimType) == "Администратор" || uploadedDb.User?.UserEmail == User.FindFirstValue(ClaimTypes.Email)))
+				return Forbid();
 
-        // POST: UploadedDbs/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("uploadedDbName")] string uploadedDbName)
-        {
-            var uploadedDb = await _context.UploadedDbs.FindAsync(id);
+			return View(uploadedDb);
+		}
 
-            if (uploadedDb is null)
-                return NotFound();
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> Edit(int id, [Bind("uploadedDbName")] string uploadedDbName)
+		{
+			var uploadedDb = await _context.UploadedDbs.FindAsync(id);
 
-            uploadedDb.UploadedDbName = uploadedDbName;
+			if (uploadedDb is null)
+				return NotFound();
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.UploadedDbs.Update(uploadedDb);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!UploadedDbExists(id))
-                        return NotFound();
-                    else
-                        throw;
-                }
-                return RedirectToAction(nameof(Index));
-            }
+			uploadedDb.UploadedDbName = uploadedDbName;
 
-            return View(uploadedDb);
-        }
+			if (ModelState.IsValid)
+			{
+				try
+				{
+					_context.UploadedDbs.Update(uploadedDb);
+					await _context.SaveChangesAsync();
+				}
+				catch (DbUpdateConcurrencyException)
+				{
+					if (!UploadedDbExists(id))
+						return NotFound();
+					else
+						throw;
+				}
+				return RedirectToAction(nameof(Index));
+			}
 
-        // GET: UploadedDbs/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-                return NotFound();
+			return View(uploadedDb);
+		}
 
-            var uploadedDb = await _context.UploadedDbs
-                .Include(u => u.Discipline)
-                .Include(u => u.User)
-                .ThenInclude(u => u!.UserType)
-                .FirstOrDefaultAsync(m => m.UploadedDbId == id);
-            if (uploadedDb == null)
-            {
-                return NotFound();
-            }
+		// GET: UploadedDbs/Delete/5
+		public async Task<IActionResult> Delete(int? id)
+		{
 
-            return View(uploadedDb);
-        }
+			if (id is null)
+				return NotFound();
 
-        // POST: UploadedDbs/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var uploadedDb = await _context.UploadedDbs.FindAsync(id);
-            if (uploadedDb != null)
-            {
-                //var db = await _context.UploadedDbs
-                //    .Include(u => u.UploadedDbResults)
-                //    .ThenInclude(r => r.UploadedDbRecords)
-                //    .FirstAsync(db => db.UploadedDbId == id);
+			var uploadedDb = await _context.UploadedDbs
+				.Include(u => u.Discipline)
+				.Include(u => u.User)
+				.ThenInclude(u => u!.UserType)
+				.FirstOrDefaultAsync(m => m.UploadedDbId == id);
 
-                //var resultsToRemove = db.UploadedDbResults;
-                //var recordsToRemove = new List<UploadedDbRecord>();
+			if (uploadedDb is null)
+				return NotFound();
 
-                //foreach (var r in resultsToRemove)
-                //{
+			if (!(User.FindFirstValue(ClaimsIdentity.DefaultRoleClaimType) == "Администратор" || uploadedDb.User?.UserEmail == User.FindFirstValue(ClaimTypes.Email)))
+				return Forbid();
 
-                //}
+			return View(uploadedDb);
+		}
 
-                //_context.RemoveRange(db.UploadedDbResults.Select(dbr => dbr.UploadedDbRecords));
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> DeleteConfirmed(int id)
+		{
+			var uploadedDb = await _context.UploadedDbs
+				.Include(db => db.UploadedDbResults)
+				.ThenInclude(dbRes => dbRes.UploadedDbRecords)
+				.FirstOrDefaultAsync(db => db.UploadedDbId == id);
 
-                _context.UploadedDbs.Remove(uploadedDb);
-            }
+			if (uploadedDb is null)
+				return NotFound();
 
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+			if (!(User.FindFirstValue(ClaimsIdentity.DefaultRoleClaimType) == "Администратор" || uploadedDb.User?.UserEmail == User.FindFirstValue(ClaimTypes.Email)))
+				return Forbid();
 
-        private bool UploadedDbExists(int id)
-        {
-            return _context.UploadedDbs.Any(e => e.UploadedDbId == id);
-        }
-    }
+			foreach (var result in uploadedDb.UploadedDbResults)
+			{
+				_context.UploadedDbRecords.RemoveRange(result.UploadedDbRecords);
+				_context.UploadedDbResults.Remove(result);
+			}
+			await _context.SaveChangesAsync();
+
+			_context.UploadedDbs.Remove(uploadedDb);
+
+			await _context.SaveChangesAsync();
+			return RedirectToAction(nameof(Index));
+		}
+
+		private bool UploadedDbExists(int id)
+		{
+			return _context.UploadedDbs.Any(e => e.UploadedDbId == id);
+		}
+	}
 }

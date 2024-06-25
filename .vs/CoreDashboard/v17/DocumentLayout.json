@@ -3,124 +3,192 @@
   "WorkspaceRootPath": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Migrations\\20240526204119_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240526204119_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\migrations\\20240625045639_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:migrations\\20240625045639_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\migrations\\20240525131002_viewsmigration.cs.txt||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:migrations\\20240525131002_viewsmigration.cs.txt||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\services\\datauploadingsevice\\datauploader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:services\\datauploadingsevice\\datauploader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\services\\datauploadingsevice\\datagetters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:services\\datauploadingsevice\\datagetters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\services\\datauploadingsevice\\dataexistanceverifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:services\\datauploadingsevice\\dataexistanceverifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\viewmodels\\userupdateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\viewmodels\\userupdateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\extensions\\cryptography.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:extensions\\cryptography.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\services\\datauploadingsevice\\dataexistanceverifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:services\\datauploadingsevice\\dataexistanceverifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\controllers\\uploadeddbscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:controllers\\uploadeddbscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\uploadeddbrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\uploadeddbrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\uploadeddbresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\uploadeddbresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\uploadeddb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\uploadeddb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\studygroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\studygroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\studydirection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\studydirection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\discipline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\discipline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\users\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\users\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\users\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\users\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\users\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\users\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\shared\\_layoutwithoutheader.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\shared\\_layoutwithoutheader.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\uploadeddbs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\uploadeddbs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\users\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\users\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Migrations\\20240622081917_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240622081917_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\services\\datauploadingsevice\\datauploader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:services\\datauploadingsevice\\datauploader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\uploadeddbs\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\uploadeddbs\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\uploadeddb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\uploadeddb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\shared\\_layoutwithoutheader.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\shared\\_layoutwithoutheader.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\auth\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\auth\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\uploadeddbresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\uploadeddbresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\extras\\educationalrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\extras\\educationalrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\users\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\users\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\teacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\teacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\usertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\usertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\extensions\\dbsetextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:extensions\\dbsetextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\pairtheme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\pairtheme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\pairtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\pairtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\studydirection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\studydirection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\uploadeddbrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\uploadeddbrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\studygroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\studygroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\models\\discipline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:models\\discipline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\uploadeddbs\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\uploadeddbs\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Migrations\\20240526204119_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240526204119_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|c:\\users\\artemis\\desktop\\utmn\\6 term\\project management\\coredashboard\\views\\users\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91D24A43-FF25-40C6-9B65-FA417404D038}|CoreDashboard.csproj|solutionrelative:views\\users\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -129,21 +197,38 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 831,
-          "SelectedChildIndex": 3,
+          "DockedWidth": 1064,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwCQAAAAAAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAQwDAAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-26T13:59:23.244Z",
               "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DataExistanceVerifier.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Services\\DataUploadingSevice\\DataExistanceVerifier.cs",
+              "RelativeDocumentMoniker": "Services\\DataUploadingSevice\\DataExistanceVerifier.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Services\\DataUploadingSevice\\DataExistanceVerifier.cs",
+              "RelativeToolTip": "Services\\DataUploadingSevice\\DataExistanceVerifier.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAYwB4AAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:12:09.69Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
@@ -155,200 +240,452 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Dockerfile",
-              "RelativeDocumentMoniker": "Dockerfile",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Dockerfile",
-              "RelativeToolTip": "Dockerfile",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-05-27T10:01:56.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAAFkAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-26T17:06:08.958Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "UploadedDbResult.cs",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\UploadedDbResult.cs",
-              "RelativeDocumentMoniker": "Models\\UploadedDbResult.cs",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\UploadedDbResult.cs",
-              "RelativeToolTip": "Models\\UploadedDbResult.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Title": "20240625045639_Init.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Migrations\\20240625045639_Init.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240625045639_Init.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Migrations\\20240625045639_Init.cs",
+              "RelativeToolTip": "Migrations\\20240625045639_Init.cs",
+              "ViewState": "AQIAAEEBAAAAAAAAAAAmwE0BAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T16:40:54.694Z"
+              "WhenOpened": "2024-06-25T04:56:39.531Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "UploadedDbRecord.cs",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\UploadedDbRecord.cs",
-              "RelativeDocumentMoniker": "Models\\UploadedDbRecord.cs",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\UploadedDbRecord.cs",
-              "RelativeToolTip": "Models\\UploadedDbRecord.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T16:40:28.391Z"
+              "DocumentIndex": 4,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2024-06-25T04:49:40.853Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "UploadedDb.cs",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\UploadedDb.cs",
-              "RelativeDocumentMoniker": "Models\\UploadedDb.cs",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\UploadedDb.cs",
-              "RelativeToolTip": "Models\\UploadedDb.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T16:40:09.984Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DataExistanceVerifier.cs",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Services\\DataUploadingSevice\\DataExistanceVerifier.cs",
-              "RelativeDocumentMoniker": "Services\\DataUploadingSevice\\DataExistanceVerifier.cs",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Services\\DataUploadingSevice\\DataExistanceVerifier.cs",
-              "RelativeToolTip": "Services\\DataUploadingSevice\\DataExistanceVerifier.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAcwDkAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T17:12:09.69Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAADgAAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T13:59:24.187Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-26T17:30:28.602Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "20240525131002_ViewsMigration.cs.txt",
               "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Migrations\\20240525131002_ViewsMigration.cs.txt",
               "RelativeDocumentMoniker": "Migrations\\20240525131002_ViewsMigration.cs.txt",
               "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Migrations\\20240525131002_ViewsMigration.cs.txt",
               "RelativeToolTip": "Migrations\\20240525131002_ViewsMigration.cs.txt",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACwAAAAAAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACYAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2024-05-26T20:20:42.483Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DataUploader.cs",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Services\\DataUploadingSevice\\DataUploader.cs",
-              "RelativeDocumentMoniker": "Services\\DataUploadingSevice\\DataUploader.cs",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Services\\DataUploadingSevice\\DataUploader.cs",
-              "RelativeToolTip": "Services\\DataUploadingSevice\\DataUploader.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T17:08:44.044Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAADAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-26T20:16:09.76Z"
+              "WhenOpened": "2024-05-26T20:16:09.76Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T17:31:12.805Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "ApplicationContext.cs",
               "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\ApplicationContext.cs",
               "RelativeDocumentMoniker": "ApplicationContext.cs",
               "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\ApplicationContext.cs",
               "RelativeToolTip": "ApplicationContext.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAmwDcAAAAAAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAAA/wDEAAADJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-26T17:08:11.268Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "UploadedDbsController.cs",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Controllers\\UploadedDbsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UploadedDbsController.cs",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Controllers\\UploadedDbsController.cs",
-              "RelativeToolTip": "Controllers\\UploadedDbsController.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAcwG8AAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T16:42:13.386Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "20240526204119_Init.cs",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Migrations\\20240526204119_Init.cs",
-              "RelativeDocumentMoniker": "Migrations\\20240526204119_Init.cs",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Migrations\\20240526204119_Init.cs",
-              "RelativeToolTip": "Migrations\\20240526204119_Init.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "DataGetters.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Services\\DataUploadingSevice\\DataGetters.cs",
+              "RelativeDocumentMoniker": "Services\\DataUploadingSevice\\DataGetters.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Services\\DataUploadingSevice\\DataGetters.cs",
+              "RelativeToolTip": "Services\\DataUploadingSevice\\DataGetters.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4AAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T20:41:19.662Z"
+              "WhenOpened": "2024-06-12T17:42:31.323Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Users\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Users\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Users\\Index.cshtml",
+              "RelativeToolTip": "Views\\Users\\Index.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAAB8AAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-26T10:43:36.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserUpdateViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\ViewModels\\UserUpdateViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\UserUpdateViewModel.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\ViewModels\\UserUpdateViewModel.cs",
+              "RelativeToolTip": "Models\\ViewModels\\UserUpdateViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T21:21:55.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Cryptography.cs",
               "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Extensions\\Cryptography.cs",
               "RelativeDocumentMoniker": "Extensions\\Cryptography.cs",
               "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Extensions\\Cryptography.cs",
               "RelativeToolTip": "Extensions\\Cryptography.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAIAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-26T13:46:24.25Z"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UploadedDbsController.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Controllers\\UploadedDbsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UploadedDbsController.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Controllers\\UploadedDbsController.cs",
+              "RelativeToolTip": "Controllers\\UploadedDbsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T16:42:13.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAWwFAAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-26T17:06:08.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\UploadedDbs\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\UploadedDbs\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\UploadedDbs\\Index.cshtml",
+              "RelativeToolTip": "Views\\UploadedDbs\\Index.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAC8AAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-29T09:18:55.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T17:31:12.805Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAmwGgAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T13:36:52.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Users\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Users\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Users\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Users\\Edit.cshtml",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAswBgAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-26T11:08:04.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Dockerfile",
+              "RelativeDocumentMoniker": "Dockerfile",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Dockerfile",
+              "RelativeToolTip": "Dockerfile",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-27T10:01:56.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAQwCwAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T13:58:50.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "DataUploader.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Services\\DataUploadingSevice\\DataUploader.cs",
+              "RelativeDocumentMoniker": "Services\\DataUploadingSevice\\DataUploader.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Services\\DataUploadingSevice\\DataUploader.cs",
+              "RelativeToolTip": "Services\\DataUploadingSevice\\DataUploader.cs",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAnwGIAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T08:03:26.634Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 18,
+              "Title": "20240622081917_Init.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Migrations\\20240622081917_Init.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240622081917_Init.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Migrations\\20240622081917_Init.cs",
+              "RelativeToolTip": "Migrations\\20240622081917_Init.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T08:19:17.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UploadedDb.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\UploadedDb.cs",
+              "RelativeDocumentMoniker": "Models\\UploadedDb.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\UploadedDb.cs",
+              "RelativeToolTip": "Models\\UploadedDb.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwBYAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T16:40:09.984Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\UploadedDbs\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\UploadedDbs\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\UploadedDbs\\Edit.cshtml",
+              "RelativeToolTip": "Views\\UploadedDbs\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-29T09:18:50.173Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-26T17:30:28.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AQIAAHIAAAAAAAAAAAAAAIQAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-25T11:11:33.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "_LayoutWIthoutHeader.cshtml",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Shared\\_LayoutWIthoutHeader.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_LayoutWIthoutHeader.cshtml",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Shared\\_LayoutWIthoutHeader.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_LayoutWIthoutHeader.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-26T09:01:30.295Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "AccessDenied.cshtml",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Auth\\AccessDenied.cshtml",
+              "RelativeDocumentMoniker": "Views\\Auth\\AccessDenied.cshtml",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Auth\\AccessDenied.cshtml",
+              "RelativeToolTip": "Views\\Auth\\AccessDenied.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABwAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-21T09:39:22.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Auth\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Auth\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Auth\\Login.cshtml",
+              "RelativeToolTip": "Views\\Auth\\Login.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-26T08:26:31.066Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "Views\\Home\\Privacy.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-12T10:22:37.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "UploadedDbResult.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\UploadedDbResult.cs",
+              "RelativeDocumentMoniker": "Models\\UploadedDbResult.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\UploadedDbResult.cs",
+              "RelativeToolTip": "Models\\UploadedDbResult.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAcwDAAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T16:40:54.694Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "EducationalRecord.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\Extras\\EducationalRecord.cs",
+              "RelativeDocumentMoniker": "Models\\Extras\\EducationalRecord.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\Extras\\EducationalRecord.cs",
+              "RelativeToolTip": "Models\\Extras\\EducationalRecord.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T20:47:56.047Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "UserType.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\UserType.cs",
+              "RelativeDocumentMoniker": "Models\\UserType.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\UserType.cs",
+              "RelativeToolTip": "Models\\UserType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T18:08:08.668Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Teacher.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\Teacher.cs",
+              "RelativeDocumentMoniker": "Models\\Teacher.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\Teacher.cs",
+              "RelativeToolTip": "Models\\Teacher.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T10:21:38.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Users\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Users\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Users\\Create.cshtml",
+              "RelativeToolTip": "Views\\Users\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-14T16:31:25.763Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "PairType.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\PairType.cs",
+              "RelativeDocumentMoniker": "Models\\PairType.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\PairType.cs",
+              "RelativeToolTip": "Models\\PairType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T18:07:10.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "PairTheme.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\PairTheme.cs",
+              "RelativeDocumentMoniker": "Models\\PairTheme.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\PairTheme.cs",
+              "RelativeToolTip": "Models\\PairTheme.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T18:07:06.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "DbSetExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Extensions\\DbSetExtensions.cs",
+              "RelativeDocumentMoniker": "Extensions\\DbSetExtensions.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Extensions\\DbSetExtensions.cs",
+              "RelativeToolTip": "Extensions\\DbSetExtensions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAABUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T12:45:33.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAABaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T13:59:24.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "Models\\Student.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\Student.cs",
+              "RelativeToolTip": "Models\\Student.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T18:07:13.672Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
               "Title": "StudyGroup.cs",
               "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\StudyGroup.cs",
               "RelativeDocumentMoniker": "Models\\StudyGroup.cs",
@@ -360,7 +697,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 39,
               "Title": "StudyDirection.cs",
               "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\StudyDirection.cs",
               "RelativeDocumentMoniker": "Models\\StudyDirection.cs",
@@ -372,7 +709,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 40,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T18:07:03.855Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "UploadedDbRecord.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\UploadedDbRecord.cs",
+              "RelativeDocumentMoniker": "Models\\UploadedDbRecord.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\UploadedDbRecord.cs",
+              "RelativeToolTip": "Models\\UploadedDbRecord.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T16:40:28.391Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
               "Title": "Discipline.cs",
               "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\Discipline.cs",
               "RelativeDocumentMoniker": "Models\\Discipline.cs",
@@ -384,43 +745,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\User.cs",
-              "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAxwCEAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T13:58:50.062Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAACcAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T13:36:52.106Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Users\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Views\\Users\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Users\\Edit.cshtml",
-              "RelativeToolTip": "Views\\Users\\Edit.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAoAAAA",
+              "DocumentIndex": 44,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\UploadedDbs\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\UploadedDbs\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\UploadedDbs\\Delete.cshtml",
+              "RelativeToolTip": "Views\\UploadedDbs\\Delete.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACcAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-26T11:08:04.769Z"
+              "WhenOpened": "2024-05-29T12:35:48.847Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 45,
+              "Title": "20240526204119_Init.cs",
+              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Migrations\\20240526204119_Init.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240526204119_Init.cs",
+              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Migrations\\20240526204119_Init.cs",
+              "RelativeToolTip": "Migrations\\20240526204119_Init.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T20:41:19.662Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Users\\Delete.cshtml",
               "RelativeDocumentMoniker": "Views\\Users\\Delete.cshtml",
@@ -429,78 +778,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-26T11:06:08.027Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Users\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Users\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Users\\Create.cshtml",
-              "RelativeToolTip": "Views\\Users\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-26T10:55:22.247Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "_LayoutWIthoutHeader.cshtml",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Shared\\_LayoutWIthoutHeader.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_LayoutWIthoutHeader.cshtml",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Shared\\_LayoutWIthoutHeader.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_LayoutWIthoutHeader.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-26T09:01:30.295Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Auth\\Login.cshtml",
-              "RelativeDocumentMoniker": "Views\\Auth\\Login.cshtml",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Auth\\Login.cshtml",
-              "RelativeToolTip": "Views\\Auth\\Login.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB8AAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-26T08:26:31.066Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "wwwroot\\css\\site.css",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAAAH0AAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-05-25T11:11:33.302Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Users\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Users\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Views\\Users\\Index.cshtml",
-              "RelativeToolTip": "Views\\Users\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-26T10:43:36.84Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Teacher.cs",
-              "DocumentMoniker": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\Teacher.cs",
-              "RelativeDocumentMoniker": "Models\\Teacher.cs",
-              "ToolTip": "C:\\Users\\Artemis\\Desktop\\utmn\\6 term\\Project Management\\CoreDashboard\\Models\\Teacher.cs",
-              "RelativeToolTip": "Models\\Teacher.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T10:21:38.119Z"
             }
           ]
         },

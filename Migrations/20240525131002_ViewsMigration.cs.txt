@@ -17,7 +17,7 @@ JOIN uploaded_db_result dbres ON dbrec.uploaded_db_result_id = dbres.uploaded_db
 JOIN study_direction sd ON dbres.study_direction_id = sd.study_direction_id;
 
 CREATE OR REPLACE VIEW group_db_presence AS
-SELECT presence, study_group_name, uploaded_db_id FROM uploaded_db_record dbrec
+SELECT presence, dbres.study_group_id, study_group_name, uploaded_db_id FROM uploaded_db_record dbrec
 JOIN uploaded_db_result dbres ON dbrec.uploaded_db_result_id = dbres.uploaded_db_result_id
 JOIN study_group sg ON dbres.study_group_id = sg.study_group_id;
 
@@ -26,6 +26,16 @@ SELECT presence, student_id, study_group_name, study_direction_name, uploaded_db
 JOIN uploaded_db_result dbres ON dbrec.uploaded_db_result_id = dbres.uploaded_db_result_id
 JOIN study_group sg ON dbres.study_group_id = sg.study_group_id
 JOIN study_direction sd ON dbres.study_direction_id = sd.study_direction_id;
+
+CREATE OR REPLACE VIEW max_student_control_score AS
+SELECT uploaded_db_id, MAX(control_sum_score) as max_control_score FROM (
+	SELECT s.student_id, SUM(theme_score) as control_sum_score, uploaded_db_id FROM uploaded_db_record dbrec
+	JOIN uploaded_db_result dbres ON dbrec.uploaded_db_result_id = dbres.uploaded_db_result_id
+	JOIN student s ON dbres.student_id = s.student_id
+	WHERE is_control_point = true AND s.student_id != 10000000000
+	GROUP BY s.student_id, uploaded_db_id
+)
+ GROUP BY uploaded_db_id;
             ");
         }
 
@@ -38,6 +48,8 @@ DROP VIEW direction_db_presence;
 DROP VIEW group_db_presence;
 
 DROP VIEW student_db_presence;
+
+DROP VIEW max_student_control_score;
             ");
 		}
     }

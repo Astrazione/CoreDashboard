@@ -12,7 +12,7 @@ namespace CoreDashboard.Models
 		public int UploadedDbRecordId { get; set; }
 
 		[Column("theme_score")]
-		[Precision(5, 2)]
+		[Precision(7, 2)]
 		public decimal? ThemeScore { get; set; }
 
 		[Column("is_control_point")]
@@ -28,9 +28,6 @@ namespace CoreDashboard.Models
 		[Column("pair_theme_id")]
 		[ForeignKey("pair_theme_id")]
 		public int PairThemeId { get; set; }
-
-		[Column("hash")]
-		public string Hash { get; set; } = null!;
 
 		public virtual UploadedDbResult? UploadedDbResult { get; set; }
 		public virtual PairTheme? PairTheme { get; set; }
